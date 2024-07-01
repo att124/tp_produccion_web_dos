@@ -1,0 +1,76 @@
+body{
+
+    padding: 0px;
+
+}
+
+main {
+
+    padding: 20px;
+
+}
+
+.colornav{
+
+    background-color: pink;
+    height: 70px;
+
+}
+
+.paddingNavbar{
+
+height: 70px;
+padding: 0px;
+
+}
+
+.espaciadoA{
+font-size: 20px;
+margin-right: 30px;
+
+}
+
+.espaciadoB{
+
+font-size: 20px;
+margin-right: 40px;
+}
+
+.oferta{
+
+margin-top: 40px;
+margin-bottom: 60px;
+text-align: center;
+
+}
+.carousel-item img { width: 100%; height: auto; }
+
+
+.centrado{
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+
+.ColorPag{
+
+background-color:aliceblue;
+
+}
+
+#bordegris{
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+#titulodecoracion{
+
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+}
