@@ -12,8 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Producto', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id_producto');
+            $table->string('titulo');
+            $table->integer('Stock');
+            $table->binary('imagen1');
+            $table->binary('imagen2')->nullable(); // Puede ser null
+            $table->binary('imagen3');
+            $table->binary('imagen4');
+            $table->unsignedInteger('fk_categoria');
+            $table->unsignedInteger('fk_marca');
+
+
+
+            $table->foreign('fk_categoria')->references('idCategoria')->on('categoria');
+            $table->foreign('fk_marca')->references('id_Marca')->on('Marca');
         });
     }
 
