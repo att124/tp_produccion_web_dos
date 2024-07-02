@@ -38,7 +38,7 @@
                         <a class="nav-link espaciadoB" href="#">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoA" href="#">Iniciar sesión</a>
+                        <a class="nav-link espaciadoA" href="{{ route('iniciar-sesion') }}">Iniciar sesión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link espaciadoA" href="#">Registrarse</a>

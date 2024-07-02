@@ -26,3 +26,8 @@ Route::get('/index', function () {
 Route::get('/inicio-sesion', function () {
     return view('inicio_sesion');
 });
+
+
+Route::get('/iniciar_sesion', function () {
+    return view('iniciar_sesion'); //
+})->name('iniciar_sesion');

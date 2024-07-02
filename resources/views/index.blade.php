@@ -77,24 +77,26 @@
   <div class="d-none d-lg-block col-lg-4">
     <article class="card">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2>Elemento 8</h2>
-        <p>DESCRIPCIÓN 8</p>
+        <h2 class="itemtitulo">Elemento 8</h2>
+        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+        <p class="itemDescripcion">Precio</p>
     </article>
 </div>
 
 <div class="d-none d-lg-block col-lg-4">
     <article class="card">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2>Elemento 8</h2>
-        <p>DESCRIPCIÓN 8</p>
+        <h2 class="itemtitulo">Elemento 8</h2>
+        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+        <p class="itemDescripcion">Precio</p>
     </article>
 </div>
 
 <div class="d-none d-lg-block col-lg-4">
     <article class="card">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2>Elemento 8</h2>
-        <p>DESCRIPCIÓN 8</p>
+        <h2 class="itemtitulo">Elemento 8</h2>
+        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
     </article>
 </div>
 
@@ -107,24 +109,24 @@
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2>Elemento 8</h2>
-            <p>DESCRIPCIÓN 8</p>
+            <h2 class="itemtitulo">Elemento 8</h2>
+            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
         </article>
     </div>
 
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2>Elemento 8</h2>
-            <p>DESCRIPCIÓN 8</p>
+            <h2 class="itemtitulo">Elemento 8</h2>
+            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
         </article>
     </div>
 
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2>Elemento 8</h2>
-            <p>DESCRIPCIÓN 8</p>
+            <h2 class="itemtitulo">Elemento 8</h2>
+            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
         </article>
     </div>
 
@@ -141,7 +143,7 @@
 
 <div class="col-12 centrado">
 
-    <img src="https://fakeimg.pl/1000x300/?text=Hello1" alt="Imágen" width="1000" height="300" class="img-fluid">
+    <img src="https://fakeimg.pl/1000x300/?text=Hello1" alt="Imágen" width="1000" height="300" class="img-fluid espimg2">
 
 </div>
 
@@ -149,18 +151,9 @@
 
 </div>
 
-<p class="espaciado">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora delectus, nihil, repellendus velit quae, ea ducimus veritatis quisquam provident assumenda magni iure vitae! Quod in, dolore labore magni iusto distinctio.</p>
+
 
 </section>
-
-
-
 </main>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html>
+@include('componentes.footer')
