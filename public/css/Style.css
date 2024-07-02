@@ -74,3 +74,18 @@ background-color:aliceblue;
     border-bottom: 1px solid #999;
     border-top: 1px solid #999;
 }
+
+#Imgcontacto img{
+
+width: 100%;
+
+}
+
+#Imgcontacto .centrado{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}

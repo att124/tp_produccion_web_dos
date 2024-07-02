@@ -23,3 +23,6 @@ Route::get('/index', function () {
 
 
 
+Route::get('/inicio-sesion', function () {
+    return view('inicio_sesion');
+});

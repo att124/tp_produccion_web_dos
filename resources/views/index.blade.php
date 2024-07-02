@@ -51,8 +51,8 @@
             </div>
         </div>
     </nav>
-
-    <main>
+</header>
+    <main class="ColorPag">
 
         <div id="bordegris">
         <h1 class="oferta" id="titulodecoracion">Ofertas</h1>
@@ -69,14 +69,14 @@
 
               <div class="carousel-item">
               <a href="#">
-                <img src="https://fakeimg.pl/1300x450/?text=Hello1" alt="Imágen de un almuerzo típico de Austria" width="1300" height="450" class="img-fluid mx-auto">
+                <img src="https://fakeimg.pl/1300x450/?text=Hello2" alt="Imágen de un almuerzo típico de Austria" width="1300" height="450" class="img-fluid mx-auto">
               </a>
 
             </div>
             <div class="carousel-item">
               <a href="#">
 
-                  <img src="https://fakeimg.pl/1300x450/?text=Hello1" alt="Imágen de un postre típico de Austria" width="1300" height="450" class="img-fluid mx-auto">
+                  <img src="https://fakeimg.pl/1300x450/?text=Hello3" alt="Imágen de un postre típico de Austria" width="1300" height="450" class="img-fluid mx-auto">
                 </a>
             </div>
         </div>
@@ -101,7 +101,7 @@
 
         <div class="col-6 centrado">
 
-            <img src="https://fakeimg.pl/600x300/?text=Hello1" alt="Imágen de una porción de Sacher" width="600" height="300" class="img-fluid">
+            <img src="https://fakeimg.pl/600x300/?text=Hello1" alt="Imágen" width="600" height="300" class="img-fluid">
 
         </div>
 
@@ -109,7 +109,7 @@
 
         <div class="col-6 centrado">
 
-            <img src="https://fakeimg.pl/600x300/?text=Hello1" alt="Imágen de una porción de Sacher" width="600" height="300" class="img-fluid">
+            <img src="https://fakeimg.pl/600x300/?text=Hello1" alt="Imágen" width="600" height="300" class="img-fluid">
 
         </div>
 
@@ -128,7 +128,7 @@
 
   <div class="d-none d-lg-block col-lg-4">
     <article class="card">
-        <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2>Elemento 8</h2>
         <p>DESCRIPCIÓN 8</p>
     </article>
@@ -136,7 +136,7 @@
 
 <div class="d-none d-lg-block col-lg-4">
     <article class="card">
-        <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2>Elemento 8</h2>
         <p>DESCRIPCIÓN 8</p>
     </article>
@@ -144,7 +144,7 @@
 
 <div class="d-none d-lg-block col-lg-4">
     <article class="card">
-        <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2>Elemento 8</h2>
         <p>DESCRIPCIÓN 8</p>
     </article>
@@ -158,7 +158,7 @@
 
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
-            <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2>Elemento 8</h2>
             <p>DESCRIPCIÓN 8</p>
         </article>
@@ -166,7 +166,7 @@
 
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
-            <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2>Elemento 8</h2>
             <p>DESCRIPCIÓN 8</p>
         </article>
@@ -174,7 +174,7 @@
 
     <div class="d-none d-lg-block col-lg-4">
         <article class="card">
-            <img src="https://fakeimg.pl/500x400/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid">
+            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2>Elemento 8</h2>
             <p>DESCRIPCIÓN 8</p>
         </article>
@@ -185,8 +185,30 @@
 
 </section>
 
+<section id="Imgcontacto">
+
+<h2 class="oferta"> Contactanos </h2>
+
+<div class="row">
+
+<div class="col-12 centrado">
+
+    <img src="https://fakeimg.pl/1000x300/?text=Hello1" alt="Imágen" width="1000" height="300" class="img-fluid">
+
+</div>
+
+
+
+</div>
+
+<p class="espaciado">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora delectus, nihil, repellendus velit quae, ea ducimus veritatis quisquam provident assumenda magni iure vitae! Quod in, dolore labore magni iusto distinctio.</p>
+
+</section>
+
+
+
 </main>
-</header>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

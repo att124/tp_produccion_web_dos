@@ -22,10 +22,11 @@ class Usuario extends Model
         'Rol_idRol'
     ];
 
-    // Relación con el modelo Rol
     public function rol()
     {
+
         return $this->belongsTo(Rol::class, 'Rol_idRol', 'idRol');
+
     }
 
 
