@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg bg-pink paddingNavbar">
         <div class="container-fluid colornav">
-            <a class="nav-link active espaciadoA" aria-current="page" href="#">   <img src="https://fakeimg.pl/300x70/?text=Hello1" alt="Logo del ecommerce" width="300" height="70" class="espaciadoA"></a>
+            <a class="nav-link active espaciadoA" aria-current="page" href="{{ route('index')}}">   <img src="https://fakeimg.pl/300x70/?text=Hello1" alt="Logo del ecommerce" width="300" height="70" class="espaciadoA"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,10 +35,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoB" href="../contactos.blade.php">Contacto</a>
+                        <a class="nav-link espaciadoB" href="#">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoA" href="{{ route('iniciar-sesion') }}">Iniciar sesión</a>
+                        <a class="nav-link espaciadoA" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link espaciadoA" href="#">Registrarse</a>

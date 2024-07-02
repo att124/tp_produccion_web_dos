@@ -25,11 +25,15 @@ Route::get('/contacto', function () {
 });
 
 
-Route::get('/inicio-sesion', function () {
+Route::get('/inicio_sesion', function () {
     return view('inicio_sesion');
 });
 
 
-Route::get('/iniciar_sesion', function () {
-    return view('iniciar_sesion'); //
-})->name('iniciar_sesion');
+Route::get('/inicio_sesion', function () {
+    return view('inicio_sesion'); //
+})->name('inicio_sesion');
+
+Route::get('/index', function () {
+    return view('index'); //
+})->name('index');
