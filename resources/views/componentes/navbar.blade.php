@@ -35,7 +35,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoB" href="#">Contacto</a>
+                        <a class="nav-link espaciadoB" href="../contactos.blade.php">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link espaciadoA" href="{{ route('iniciar-sesion') }}">Iniciar sesión</a>
