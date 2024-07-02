@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg bg-pink paddingNavbar">
         <div class="container-fluid colornav">
-            <a class="nav-link active espaciadoA" aria-current="page" href="{{ route('index')}}">   <img src="https://fakeimg.pl/300x70/?text=Hello1" alt="Logo del ecommerce" width="300" height="70" class="espaciadoA"></a>
+            <a class="nav-link active espaciadoA" aria-current="page" href="{{ route('index')}}">   <img src="{{ asset('imgs/LogoElectra.png') }}" alt="Logo del ecommerce" width="300" height="70" class="espaciadoA"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

@@ -75,28 +75,32 @@
 <div class="row">
 
   <div class="d-none d-lg-block col-lg-4">
-    <article class="card">
+    <article class="card cardtamano">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2 class="itemtitulo">Elemento 8</h2>
         <p class="itemDescripcion">DESCRIPCIÓN 8</p>
         <p class="itemDescripcion">Precio</p>
+        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
     </article>
 </div>
 
 <div class="d-none d-lg-block col-lg-4">
-    <article class="card">
+    <article class="card cardtamano">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2 class="itemtitulo">Elemento 8</h2>
         <p class="itemDescripcion">DESCRIPCIÓN 8</p>
         <p class="itemDescripcion">Precio</p>
+        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
     </article>
 </div>
 
 <div class="d-none d-lg-block col-lg-4">
-    <article class="card">
+    <article class="card cardtamano">
         <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
         <h2 class="itemtitulo">Elemento 8</h2>
         <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+        <p class="itemDescripcion">Precio</p>
+        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
     </article>
 </div>
 
@@ -107,26 +111,32 @@
 <div class="row">
 
     <div class="d-none d-lg-block col-lg-4">
-        <article class="card">
+        <article class="card cardtamano">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2 class="itemtitulo">Elemento 8</h2>
             <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+            <p class="itemDescripcion">Precio</p>
+            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
         </article>
     </div>
 
     <div class="d-none d-lg-block col-lg-4">
-        <article class="card">
+        <article class="card cardtamano">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2 class="itemtitulo">Elemento 8</h2>
             <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+            <p class="itemDescripcion">Precio</p>
+            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
         </article>
     </div>
 
     <div class="d-none d-lg-block col-lg-4">
-        <article class="card">
+        <article class="card cardtamano">
             <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
             <h2 class="itemtitulo">Elemento 8</h2>
             <p class="itemDescripcion">DESCRIPCIÓN 8</p>
+            <p class="itemDescripcion">Precio</p>
+            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
         </article>
     </div>
 

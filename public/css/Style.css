@@ -151,9 +151,27 @@ margin-bottom: 30px;
 
 .itemtitulo{
 
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+}
 
+.itemDescripcion{
+
+    text-align: center;
+
+}
+
+.boton{
+
+display: flex;
 
 }
 
 
+.cardtamano {
+    max-width: 350px;
+    margin: auto;
+    padding: 10px;
 
+}
