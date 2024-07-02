@@ -175,3 +175,27 @@ display: flex;
     padding: 10px;
 
 }
+
+
+.espaciado{
+
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+
+.espacioini{
+
+margin-bottom: 30px;
+
+
+}
+
+.cc{
+
+background-color:bisque;
+
+}
+
+.letrasini{font-size: 1.3em;}

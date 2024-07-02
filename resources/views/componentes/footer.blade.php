@@ -2,7 +2,7 @@
 <footer class="colorfooter">
     <div class="row">
         <div class="col-12 centrado">
-             <img src="https://fakeimg.pl/200x80/?text=Hello1" alt="Imágen" width="200" height="80" class="img-fluid rounded espaciado" id="espimg"></div></div>
+             <img src="{{ asset('imgs/LogoElectra.png') }}" alt="Imágen" width="300" height="80" class="img-fluid rounded espaciado" id="espimg"></div></div>
 
             <div class="Lineagris"></div>
 

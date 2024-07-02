@@ -35,7 +35,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoB" href="#">Contacto</a>
+                        <a class="nav-link espaciadoB" href="{{route ('contacto')}}">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link espaciadoA" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>

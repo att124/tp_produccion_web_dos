@@ -37,3 +37,9 @@ Route::get('/inicio_sesion', function () {
 Route::get('/index', function () {
     return view('index'); //
 })->name('index');
+
+
+Route::get('/contacto', function () {
+    return view('contactos'); //
+})->name('contacto');
+
