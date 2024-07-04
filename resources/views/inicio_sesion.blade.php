@@ -31,9 +31,10 @@
 
                                 <button type="submit" class="btn btn-primary btn-block botonTamano">Ingresar</button>
                             </div>
-                            <div class="col-12  col-lg-6 padding-derecha">
+                            <div class="col-12  col-lg-6 padding-derecha registrarse">
 
-                                <button type="submit" class="btn btn-primary btn-block botonTamano">Registrarse</button>
+                                <a href="#" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
+
                             </div>
                         </div>
                     </form>

@@ -284,3 +284,10 @@ background-color:bisque;
     }
 
 }
+
+.registrarse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
