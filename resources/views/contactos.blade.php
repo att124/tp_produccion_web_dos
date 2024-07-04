@@ -1,6 +1,9 @@
-@include('componentes.navbar')
+@extends('layout')
 
-<main class="ColorPag">
+
+@section('contenido')
+
+<main class="ColorPagContacto">
     <section id="contacto" class="py-5">
         <div class="container">
             <h2 class="oferta">Contáctanos</h2>
@@ -32,4 +35,4 @@
     </section>
 </main>
 
-@include('componentes.footer')
+@endsection

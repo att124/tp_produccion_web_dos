@@ -2,7 +2,12 @@
 
 <main>
 
-    <h1 class="oferta text-center mt-5">Login</h1>
+    <!--<h1 class="oferta text-center mt-5">Login</h1>
+    -->
+    <div class="centrado">
+        <img src="{{asset('imgs/LogoElectra.png')}}" alt="Logo de electra emporiun" width="300" height="70" class="LogoEspacio">
+    </div>
+
 
     <section class="mt-5">
         <div class="container">

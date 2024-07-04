@@ -199,3 +199,32 @@ background-color:bisque;
 }
 
 .letrasini{font-size: 1.3em;}
+
+
+.hovernav:hover{
+
+color: white !important;
+
+}
+
+
+.navbar-nav .nav-link.active {
+    color: white !important;
+}
+
+
+.ColorPagContacto{
+
+padding: 0px !important;
+
+background-color:bisque;
+
+}
+
+
+.LogoEspacio{
+
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
