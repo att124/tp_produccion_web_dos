@@ -26,7 +26,16 @@
                                 <input type="password" id="pass" name="pass" class="form-control espacioini tamanoinp" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block botonTamano">Ingresar</button>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 padding-izquierda">
+
+                                <button type="submit" class="btn btn-primary btn-block botonTamano">Ingresar</button>
+                            </div>
+                            <div class="col-12  col-lg-6 padding-derecha">
+
+                                <button type="submit" class="btn btn-primary btn-block botonTamano">Registrarse</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
