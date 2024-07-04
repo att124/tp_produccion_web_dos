@@ -39,10 +39,10 @@
                         <a class="nav-link {{ Request::is('contacto') ? 'active' : '' }} espaciadoB hovernav" href="{{route ('contacto')}}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
+                        <a class="nav-link espaciadoA hovernav" href="#">Acerca de nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link espaciadoA hovernav" href="#">Registrarse</a>
+                        <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">

@@ -16,13 +16,17 @@
                     <form action="#" method="post" class="border p-5 cc">
                         <div class="form-group">
                             <label for="usuario" class="espacioini letrasini">Usuario:</label>
-                            <input type="text" id="usuario" name="usuario" class="form-control espacioini" required>
+                            <div class="centrado">
+                                <input type="text" id="usuario" name="usuario" class="form-control espacioini tamanoinp" required>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="pass" class="espacioini letrasini">Contraseña:</label>
-                            <input type="password" id="pass" name="pass" class="form-control espacioini" required>
+                            <div class="centrado">
+                                <input type="password" id="pass" name="pass" class="form-control espacioini tamanoinp" required>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                        <button type="submit" class="btn btn-primary btn-block botonTamano">Ingresar</button>
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
@@ -34,6 +38,9 @@
     </section>
 
 </main>
+
+
+
 
 <p class="espaciado">Electra emporium</p>
 

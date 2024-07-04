@@ -198,7 +198,7 @@ background-color:bisque;
 
 }
 
-.letrasini{font-size: 1.3em;}
+.letrasini{font-size: 1.4em;}
 
 
 .hovernav:hover{
@@ -226,5 +226,22 @@ background-color:bisque;
 
     margin-top: 40px;
     margin-bottom: 20px;
+
+}
+
+.botonTamano{
+
+    margin-top: 15px;
+    width: 100%;
+    max-width: 180px;
+    height: 50px;
+}
+
+
+.tamanoinp{
+
+    width: 100%;
+    max-width: 350px;
+    height: 40px;
 
 }
