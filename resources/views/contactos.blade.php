@@ -1,5 +1,6 @@
-@extends('layout')
+@extends('componentes.layout')
 
+@section('titulo','Contactos')
 
 @section('contenido')
 

@@ -1,4 +1,8 @@
-@include('componentes.navbar')
+@extends('componentes.layout')
+
+@section('titulo','Inicio de sesion')
+
+@section('contenido')
 
 <main>
 
@@ -33,7 +37,7 @@
                             </div>
                             <div class="col-12  col-lg-6 padding-derecha registrarse">
 
-                                <a href="#" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
+                                <a href="{{ route('registro') }}" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
 
                             </div>
                         </div>
@@ -54,4 +58,4 @@
 
 <p class="espaciado">Electra emporium</p>
 
-@include('componentes.footer')
+@endsection

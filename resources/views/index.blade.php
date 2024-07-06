@@ -1,4 +1,9 @@
-@include('componentes.navbar')
+@extends('componentes.layout')
+
+@section('titulo','Inicio')
+
+@section('contenido')
+
 
     <main class="ColorPag">
 
@@ -164,4 +169,4 @@
 </section>
 </main>
 
-@include('componentes.footer')
+@endsection

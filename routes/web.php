@@ -43,3 +43,14 @@ Route::get('/contacto', function () {
     return view('contactos'); //
 })->name('contacto');
 
+Route::get('/about', function () {
+    return view('about'); //
+})->name('nosotros');
+
+Route::get('/registro',function(){
+
+return view('registro');
+
+
+})->name('registro');
+

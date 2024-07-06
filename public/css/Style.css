@@ -248,7 +248,7 @@ background-color:bisque;
 
 }
 
-/* Media queries */
+/* Media queries para el boton de iniciar sesión, esto asegura que quede centrado con respecto a los inputs y en caso de resoluciones menores a 1000px asegura que esten centrados en la pantalla sin padding.  */
 
 
 @media (min-width: 991px) {
@@ -285,9 +285,19 @@ background-color:bisque;
 
 }
 
+/* Centra el enlace registrarse con respecto al boton iniciar sesión. */
+
 .registrarse {
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+
+.contenidoDespues{
+
+margin-top: 100px;
+margin-bottom: 150px;
+text-align: center;
+font-size: 5em;
 }
