@@ -294,6 +294,55 @@ background-color:bisque;
 
 }
 
+
+#imagenabout{
+
+    margin-top: 100px;
+    margin-bottom: 150px;
+    width: 100%; height: auto;
+    }
+
+
+.bordesimgsabout{
+
+        border: 2px solid black;
+        border-radius: 10px;
+        overflow: hidden;
+
+        }
+
+
+
+.subtituloabout{
+            text-align: center;
+            margin-top: 40px;
+        margin-bottom: 30px;
+        }
+
+
+ #imagenresponsive{
+
+     margin-top: 40px;
+
+}
+
+.margininferior{margin-bottom: 50px;}
+
+
+.margenesLaterales{
+
+margin-left: 10px;
+margin-right: 10px;
+
+}
+
+.tituloabout{
+
+    margin-top: 20px;
+    margin-bottom: 70px;
+text-align: center;
+}
+
 .contenidoDespues{
 
 margin-top: 100px;

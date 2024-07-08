@@ -25,7 +25,7 @@
                         <a class="nav-link {{ Request::is('contacto') ? 'active' : '' }} espaciadoB hovernav" href="{{route ('contacto')}}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Acerca de nosotros</a>
+                        <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
