@@ -17,13 +17,13 @@ return new class extends Migration
             $table->double('Precio_Total');
             $table->integer('Cantidad_producto');
             $table->timestamps();
+
             $table->unsignedBigInteger('fk_producto');
             $table->unsignedBigInteger('fk_usuario');
 
 
             $table->foreign('fk_producto')->references('id')->on('productos')->onDelete('cascade');
             $table->foreign('fk_usuario')->references('id')->on('usuarios')->onDelete('cascade');
-
         });
     }
 

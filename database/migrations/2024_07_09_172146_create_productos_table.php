@@ -23,6 +23,7 @@ return new class extends Migration
             $table->binary('imagen4')->nullable();
             $table->timestamps();
 
+
             $table->unsignedBigInteger('fk_categoria');
 
             $table->foreign('fk_categoria')->references('id')->on('categorias')->onDelete('cascade');

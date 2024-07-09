@@ -23,9 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_datos_usuario');
 
 
-            $table->foreign('fk_rol')->references('id')->on('roles')->onDelete('cascade');
-            $table->foreign('fk_datos_usuario')->references('id')->on('datos_usuarios')->onDelete('cascade');
-
+            $table->foreign('fk_rol')->references('id')->on('rols')->onDelete('cascade');
+            $table->foreign('fk_datos_usuario')->references('id')->on('datousuarios')->onDelete('cascade');
         });
     }
 
