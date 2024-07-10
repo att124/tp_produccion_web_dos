@@ -12,7 +12,12 @@ class ProvinciaController extends Controller
      */
     public function index()
     {
-        //
+
+        $provincias = Provincia::all();
+
+       return view('provincia.index',compact('provincias')); // compact devuelve un array asociativo con las provincias.
+
+
     }
 
     /**
@@ -20,7 +25,7 @@ class ProvinciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('provincia.create');
     }
 
     /**
@@ -28,7 +33,13 @@ class ProvinciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'Provincia' => 'required|string|max:45',
+        ]);
+
+        Provincia::create($validated);
+
+        return redirect()->route('provincia.index')->with('completado', 'Provincia creada exitosamente.');
     }
 
     /**
@@ -36,7 +47,7 @@ class ProvinciaController extends Controller
      */
     public function show(Provincia $provincia)
     {
-        //
+        return view('provincia.show', compact('provincia'));
     }
 
     /**
@@ -44,7 +55,7 @@ class ProvinciaController extends Controller
      */
     public function edit(Provincia $provincia)
     {
-        //
+        return view('provincia.edit', compact('provincia'));
     }
 
     /**
@@ -52,7 +63,13 @@ class ProvinciaController extends Controller
      */
     public function update(Request $request, Provincia $provincia)
     {
-        //
+        $validated = $request->validate([
+            'Provincia' => 'required|string|max:45',
+        ]);
+
+        $provincia->update($validated);
+
+        return redirect()->route('provincia.index')->with('completado', 'Provincia actualizada exitosamente.');
     }
 
     /**
@@ -60,6 +77,8 @@ class ProvinciaController extends Controller
      */
     public function destroy(Provincia $provincia)
     {
-        //
+        $provincia->delete();
+
+        return redirect()->route('provincia.index')->with('completado', 'Provincia eliminada exitosamente.');
     }
 }

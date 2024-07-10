@@ -12,7 +12,8 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Rol::all();
+        return view('roles.index', compact('roles')); // Falta agregar la vista
     }
 
     /**
@@ -20,7 +21,7 @@ class RolController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create'); // Un formulario para crear más roles.
     }
 
     /**
@@ -28,7 +29,16 @@ class RolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required|string|max:45',
+        ]);
+
+
+                Rol::create($validated);
+
+
+                return redirect()->route('roles.index')->with('success', 'Rol creado exitosamente.');
+
     }
 
     /**
@@ -36,7 +46,7 @@ class RolController extends Controller
      */
     public function show(Rol $rol)
     {
-        //
+           return view('roles.show', compact('rol'));
     }
 
     /**
@@ -44,7 +54,8 @@ class RolController extends Controller
      */
     public function edit(Rol $rol)
     {
-        //
+         // Mostrar el formulario de edición
+         return view('roles.edit', compact('rol'));
     }
 
     /**
@@ -52,7 +63,16 @@ class RolController extends Controller
      */
     public function update(Request $request, Rol $rol)
     {
-        //
+
+         $validated = $request->validate([
+            'nombre' => 'required|string|max:45',
+        ]);
+
+
+        $rol->update($validated); // Metodo de eloquent, no es el metodo update propio del controlador.
+
+
+        return redirect()->route('roles.index')->with('success', 'Rol actualizado exitosamente.');
     }
 
     /**
@@ -60,6 +80,10 @@ class RolController extends Controller
      */
     public function destroy(Rol $rol)
     {
-        //
+
+         $rol->delete();
+
+
+         return redirect()->route('roles.index')->with('success', 'Rol eliminado exitosamente.');
     }
 }

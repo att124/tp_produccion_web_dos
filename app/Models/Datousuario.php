@@ -14,6 +14,7 @@ class Datousuario extends Model
         'apellido',
         'mail',
         'dni',
+        'localidad',
         'calle',
         'altura',
         'piso',
@@ -25,12 +26,6 @@ class Datousuario extends Model
     public function provincia()
     {
         return $this->belongsTo(Provincia::class, 'fk_provincia');
-    }
-
-
-    public function localidad()
-    {
-        return $this->belongsTo(Localidad::class, 'fk_localidad');
     }
 
 }

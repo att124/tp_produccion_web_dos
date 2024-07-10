@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('apellido',45);
             $table->string('mail',90);
             $table->integer('dni');
-
+            $table->string('localidad',80);
             $table->string('calle',50);
             $table->integer('altura');
             $table->integer('piso')->nullable();
@@ -25,10 +25,10 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('fk_provincia');
-            $table->unsignedBigInteger('fk_localidad');
+
 
             $table->foreign('fk_provincia')->references('id')->on('provincias')->onDelete('cascade');
-            $table->foreign('fk_localidad')->references('id')->on('localidads')->onDelete('cascade');
+
         });
     }
 
