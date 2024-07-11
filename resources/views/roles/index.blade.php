@@ -17,7 +17,14 @@
     <caption>Tabla de roles</caption>
 
     @forelse ($roles as $rol)
-    <tr><td>{{ $rol->nombre }}</tr></td>
+    <tr>
+        <td><a href="{{ route('roles.mostrar', $rol->id)}}">{{ $rol->nombre }}</a></td>
+        <td><a href="{{ route('roles.edit', $rol->id) }}">Editar</a></td>
+        <td><form method="POST" action="{{route('roles.borrar', $rol->id)}}">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Borrar</button>
+        </form></td></tr>
     @empty
 
     <tr><td>No hay roles aún.</td></tr>

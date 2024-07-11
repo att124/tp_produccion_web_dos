@@ -30,6 +30,19 @@
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
                     </li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle espaciadoA hovernav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Temporal
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>
+                            <li><a class="dropdown-item" href="{{route('categorias.index')}}">Categorias</a></li>
+                            <li><a class="dropdown-item" href="#">Categoria3</a></li>
+                        </ul>
+                    </li>
+
+
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

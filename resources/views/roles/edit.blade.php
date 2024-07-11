@@ -8,19 +8,19 @@
 @section('contenido')
 
 
-<h1 class="oferta">Creacion de roles</h1>
+<h1 class="oferta">Edicion de roles</h1>
 
 <a href="{{ route('roles.index')}}">Inicio de roles</a>
 
-<form action=" {{ route('roles.store') }}" method="POST">
-
-@csrf <!-- Proteccion -->
+<form action="{{ route('roles.update', $rol->id )}}" method="POST">
+@method('PUT') <!-- Modifica el metodo a put. -->
+@csrf
 
 <label for="nombre">Nombre del rol: </label>
 
-<input type="text" name="nombre" id="nombre"  required/>
+<input type="text" name="nombre" id="nombre" value="{{ $rol->nombre }}" required/>
 
-<button type="submit">Creacion</button>
+<button type="submit">Modificar</button>
 
 
 </form>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
-
+use App\Http\Controllers\CategoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +44,15 @@ Route::get('/roles/create', [RolController::class, 'create'])->name('roles.creat
 Route::post('/roles/store', [RolController::class, 'store'])->name('roles.store');
 
 Route::get('/roles/edit/{rol}',[Rolcontroller::class, 'edit'])->name('roles.edit');
+
+Route::put('/roles/update/{rol}',[Rolcontroller::class, 'update'])->name('roles.update');
+
+Route::get('/roles/mostrar/{rol}',[Rolcontroller::class, 'show'])->name('roles.mostrar');
+
+Route::delete('roles/borrar/{rol}',[Rolcontroller::class, 'destroy'])->name('roles.borrar');
+
+Route::get('/categorias',[CategoriaController::class, 'index'])->name('categorias.index');
+
+Route::get('/categorias/crear',[CategoriaController::class, 'create'])->name('categorias.crear');
+
+Route::post('/categorias/store', [CategoriaController::class, 'store'])->name('categorias.store');

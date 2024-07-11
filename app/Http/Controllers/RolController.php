@@ -30,7 +30,7 @@ class RolController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nombre' => 'required|string|max:45',
+            'nombre' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
         ]);
 
 
@@ -46,7 +46,7 @@ class RolController extends Controller
      */
     public function show(Rol $rol)
     {
-           return view('roles.show', compact('rol'));
+        return view('roles.mostrar', compact('rol'));
     }
 
     /**
@@ -64,8 +64,8 @@ class RolController extends Controller
     public function update(Request $request, Rol $rol)
     {
 
-         $validated = $request->validate([
-            'nombre' => 'required|string|max:45',
+        $validated = $request->validate([
+            'nombre' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
         ]);
 
 
