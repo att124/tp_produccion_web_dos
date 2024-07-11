@@ -72,7 +72,7 @@ class RolController extends Controller
         $rol->update($validated); // Metodo de eloquent, no es el metodo update propio del controlador.
 
 
-        return redirect()->route('roles.index')->with('success', 'Rol actualizado exitosamente.');
+        return redirect()->route('roles.index')->with('completado', 'Rol actualizado exitosamente.');
     }
 
     /**
@@ -84,6 +84,6 @@ class RolController extends Controller
          $rol->delete();
 
 
-         return redirect()->route('roles.index')->with('success', 'Rol eliminado exitosamente.');
+         return redirect()->route('roles.index')->with('completado', 'Rol eliminado exitosamente.');
     }
 }

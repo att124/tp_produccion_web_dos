@@ -12,7 +12,8 @@ class DatousuarioController extends Controller
      */
     public function index()
     {
-        //
+        $datousuarios = Datousuario::all();
+        return view('datousuarios.index', compact('datousuarios'));
     }
 
     /**
