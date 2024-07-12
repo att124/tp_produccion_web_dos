@@ -1,28 +1,28 @@
 @extends('componentes.layout')
 
-
 @section('titulo','Roles')
-
-
 
 @section('contenido')
 
+<h1 class="oferta">Edición de roles</h1>
 
-<h1 class="oferta">Edicion de roles</h1>
+<div class="centrado">
+    <form action="{{ route('roles.update', $rol->id) }}" method="POST" class="form-group formulariotamano">
+        @method('PUT') <!-- Modifica el método a PUT -->
+        @csrf
 
-<a href="{{ route('roles.index')}}">Inicio de roles</a>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del rol:</label>
+            <input type="text" name="nombre" id="nombre" value="{{ $rol->nombre }}" class="form-control tamanoinput" required>
+        </div>
 
-<form action="{{ route('roles.update', $rol->id )}}" method="POST">
-@method('PUT') <!-- Modifica el metodo a put. -->
-@csrf
+        <div class="centrado">
+            <button type="submit" class="btn btn-success tamanobtnvolver">Modificar</button>
+            <a href="{{ route('roles.index') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
+        </div>
+    </form>
+</div>
 
-<label for="nombre">Nombre del rol: </label>
-
-<input type="text" name="nombre" id="nombre" value="{{ $rol->nombre }}" required/>
-
-<button type="submit">Modificar</button>
-
-
-</form>
 <p class="contenidoDespues">Lista de roles de usuarios.</p>
+
 @endsection

@@ -350,3 +350,32 @@ margin-bottom: 150px;
 text-align: center;
 font-size: 5em;
 }
+
+
+.margenesbtn{
+
+    margin-top: 17px;
+margin-left: 30px;
+
+}
+
+.tamanoinput{
+
+max-width: 500px;
+
+}
+
+.formulariotamano{
+
+    width: 500px;
+
+}
+
+
+.espaciobtnvolver{
+
+margin-top: 50px;
+
+}
+
+.tamanobtnvolver{width: 100px;}

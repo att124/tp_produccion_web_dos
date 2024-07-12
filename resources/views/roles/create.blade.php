@@ -1,28 +1,36 @@
 @extends('componentes.layout')
 
-
 @section('titulo','Roles')
-
-
 
 @section('contenido')
 
+<h1 class="oferta">Creación de roles</h1>
 
-<h1 class="oferta">Creacion de roles</h1>
+<div class="centrado">
 
-<a href="{{ route('roles.index')}}">Inicio de roles</a>
 
-<form action=" {{ route('roles.store') }}" method="POST">
+    <form action="{{ route('roles.store') }}" method="POST" class="form-group formulariotamano">
 
-@csrf <!-- Proteccion -->
+        @csrf <!-- Proteccion -->
 
-<label for="nombre">Nombre del rol: </label>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del rol:</label>
+            <input type="text" name="nombre" id="nombre" class="form-control tamanoinput" required>
+        </div>
 
-<input type="text" name="nombre" id="nombre"  required/>
+        <div class="centrado">
 
-<button type="submit">Creacion</button>
 
+            <button type="submit" class="btn btn-success tamanobtnvolver">Creacion</button>
+            <a href="{{ route('roles.index') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
+
+        </div>
 
 </form>
+</div>
+
+
+
 <p class="contenidoDespues">Lista de roles de usuarios.</p>
+
 @endsection

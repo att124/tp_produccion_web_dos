@@ -1,28 +1,27 @@
 @extends('componentes.layout')
 
-
-@section('titulo','Creacion de categoria')
-
+@section('titulo','Creación de categoría')
 
 @section('contenido')
 
-<h1 class="oferta">Creacion de categorias</h1>
+<h1 class="oferta">Creación de categorías</h1>
 
-<a href="{{route('categorias.index')}}">Inicio de categoria</a>
+<div class="centrado">
+    <form action="{{ route('categorias.store') }}" method="POST" class="form-group formulariotamano">
+        @csrf <!-- Protección -->
 
-<form action="{{route('categorias.store')}}" method="POST">
+        <div class="mb-3">
+            <label for="Categoria" class="form-label">Nombre de la categoría:</label>
+            <input type="text" name="Categoria" id="Categoria" class="form-control tamanoinput" required />
+        </div>
 
-@csrf <!-- Proteccion -->
+        <div class="centrado">
+            <button type="submit" class="btn btn-success">Crear categoría</button>
+            <a href="{{ route('categorias.index') }}" class="btn btn-primary mb-3 margenesbtn">Volver</a>
+        </div>
+    </form>
+</div>
 
-<label for="Categoria">Nombre de la categoria: </label>
-
-<input type="text" name="Categoria" id="Categoria"  required/>
-
-<button type="submit">Crear</button>
-
-
-</form>
-
-<p class="contenidoDespues">Lista de roles de usuarios.</p>
+<p class="contenidoDespues">Lista de categorías existentes.</p>
 
 @endsection
