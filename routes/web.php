@@ -56,3 +56,13 @@ Route::get('/categorias',[CategoriaController::class, 'index'])->name('categoria
 Route::get('/categorias/crear',[CategoriaController::class, 'create'])->name('categorias.crear');
 
 Route::post('/categorias/store', [CategoriaController::class, 'store'])->name('categorias.store');
+
+Route::get('/categorias/edit/{categoria}',[CategoriaController::class, 'edit'])->name('categorias.edit');
+
+Route::put('/categorias/update/{categoria}',[CategoriaController::class, 'update'])->name('categorias.update');
+
+Route::delete('categorias/delete/{categoria}',[CategoriaController::class, 'destroy'])->name('categorias.delete');
+
+Route::get('/categorias/mostrar/{categoria}',[CategoriaController::class, 'show'])->name('categorias.mostrar');
+
+

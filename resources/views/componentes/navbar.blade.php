@@ -15,9 +15,11 @@
                             Productos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Categoria1</a></li>
-                            <li><a class="dropdown-item" href="#">Categoria2</a></li>
-                            <li><a class="dropdown-item" href="#">Categoria3</a></li>
+                            @forelse ($categorias as $categoria)
+                            <li><a href="{{route('categorias.mostrar',$categoria->id)}}" class="dropdown-item">{{$categoria->Categoria}}</a></li>
+                            @empty
+                            <li class="dropdown-item">No hay categorias</li>
+                            @endforelse
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -38,7 +40,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>
                             <li><a class="dropdown-item" href="{{route('categorias.index')}}">Categorias</a></li>
-                            <li><a class="dropdown-item" href="#">Categoria3</a></li>
+                            <li><a class="dropdown-item" href="#">Usuarios</a></li>
                         </ul>
                     </li>
 
@@ -51,4 +53,5 @@
             </div>
         </div>
     </nav>
+
 

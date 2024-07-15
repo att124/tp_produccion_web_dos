@@ -30,7 +30,7 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'Categoria' => 'required|string|max:45',
+            'Categoria' => ['required', 'string', 'max:45' ,'regex:/^[a-zA-Z\s]*$/']
         ]);
 
         Categoria::create($validated);
@@ -43,7 +43,9 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        return view('categorias.show', compact('categoria'));
+
+        $categoria->load('productos');
+        return view('categorias.mostrar', compact('categoria'));
     }
 
     /**
@@ -60,7 +62,7 @@ class CategoriaController extends Controller
     public function update(Request $request, Categoria $categoria)
     {
         $validated = $request->validate([
-            'Categoria' => 'required|string|max:45',
+            'Categoria' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/']
         ]);
 
         $categoria->update($validated);

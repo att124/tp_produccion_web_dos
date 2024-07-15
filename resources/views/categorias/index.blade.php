@@ -1,6 +1,6 @@
 @extends('componentes.layout')
 
-@section('titulo','Roles')
+@section('titulo','Categorias')
 
 @section('contenido')
 
@@ -21,10 +21,10 @@
     <tbody>
         @forelse ($categorias as $categoria)
         <tr>
-            <td><a href="#">{{ $categoria->Categoria }}</a></td>
+            <td><a href="{{route('categorias.mostrar',$categoria->id)}}">{{ $categoria->Categoria }}</a></td>
             <td>
-                <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                <form method="POST" action="#" style="display:inline;">
+                <a href="{{route('categorias.edit', $categoria->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                <form method="POST" action="{{route('categorias.delete', $categoria->id)}}" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
