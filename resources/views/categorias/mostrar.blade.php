@@ -1,7 +1,7 @@
 @extends('componentes.layout')
 
 
-@section('titulo','{{$categoria->Categoria}}')
+@section('titulo','Electra emporium')
 
 
 
@@ -25,7 +25,7 @@
         @foreach ($categoria->productos as $producto)
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <article class="card cardtamano">
-                    <img src="data:image/jpeg;base64,{{ base64_encode($producto->imagen1) }}" alt="{{ $producto->titulo }}" width="300" class="rounded img-fluid mx-auto">
+                    <img src="{{ asset('storage/' . $producto->imagen1) }}" alt="{{ $producto->titulo }}" width="300" class="rounded img-fluid mx-auto">
                     <h2 class="itemtitulo">{{ $producto->titulo }}</h2>
                     <p class="itemDescripcion">Marca: {{ $producto->marca }}</p>
                     <p class="itemDescripcion">Precio: ${{ $producto->precio }}</p>

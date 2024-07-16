@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,4 +66,8 @@ Route::delete('categorias/delete/{categoria}',[CategoriaController::class, 'dest
 
 Route::get('/categorias/mostrar/{categoria}',[CategoriaController::class, 'show'])->name('categorias.mostrar');
 
+Route::get('/productos/index',[ProductoController::class,'index'])->name('productos.index');
 
+Route::get('/productos/create',[ProductoController::class, 'create'])->name('productos.create');
+
+Route::post('/productos/store',[ProductoController::class, 'store'])->name('productos.store');

@@ -41,6 +41,7 @@
                             <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>
                             <li><a class="dropdown-item" href="{{route('categorias.index')}}">Categorias</a></li>
                             <li><a class="dropdown-item" href="#">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="{{route('productos.index')}}">Lista de productos</a></li>
                         </ul>
                     </li>
 
