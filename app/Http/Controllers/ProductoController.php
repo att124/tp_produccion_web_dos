@@ -85,7 +85,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('productos.mostrar', compact('producto'));
     }
 
     /**
@@ -93,7 +93,10 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        //
+
+        $categorias = Categoria::all();
+
+       return view('productos.edit',compact('producto','categorias'));
     }
 
     /**
@@ -101,14 +104,52 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $validated = $request ->validate([
+            'titulo' => ['required', 'string', 'max:45'],
+            'precio' => ['required', 'numeric'],
+            'stock' => ['required', 'integer'],
+            'marca' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
+            'imagen1' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'imagen2' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'imagen3' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'imagen4' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'fk_categoria' => ['required']
+        ]);
+        if ($request->hasFile('imagen1')) {
+            $imagen1 = $request->file('imagen1')->store('imgs', 'public');
+            $producto->imagen1 = $imagen1;
+        }
+        if ($request->hasFile('imagen2')) {
+            $imagen2 = $request->file('imagen2')->store('imgs', 'public');
+            $producto->imagen2 = $imagen2;
+        }
+        $imagen3 = $request->hasFile('imagen3') ? $request->file('imagen3')->store('imgs', 'public') : $producto->imagen3;
+        $imagen4 = $request->hasFile('imagen4') ? $request->file('imagen4')->store('imgs', 'public') : $producto->imagen4;
+
+
+        $producto->update([
+            'titulo' => $validated['titulo'],
+            'precio' => $validated['precio'],
+            'stock' => $validated['stock'],
+            'marca' => $validated['marca'],
+            'imagen1' => $imagen1,
+            'imagen2' => $imagen2,
+            'imagen3' => $imagen3,
+            'imagen4' => $imagen4,
+            'fk_categoria' => $validated['fk_categoria']
+        ]);
+        return redirect()->route('productos.index')->with('completado', 'Producto actualizado exitosamente.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Producto $producto)
+    public function destroy(Request $request, Producto $producto)
     {
-        //
+
+        $producto->delete();
+
+       return redirect()->route('productos.index')->with('producto eliminado','El producto ha sido eliminado');
+
     }
 }

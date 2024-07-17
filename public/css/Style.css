@@ -379,3 +379,30 @@ margin-top: 50px;
 }
 
 .tamanobtnvolver{width: 100px;}
+
+
+.bordesproduct{
+
+    border-width: 2px;
+    border-style:  double;
+    border-color: black;
+
+
+}
+
+.centradobtncompra{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 40px;
+}
+
+.imgcentrada{
+
+display: flex;
+justify-content:center;
+align-items: center;
+}

@@ -81,6 +81,6 @@
 
 
 
-<p class="contenidoDespues">Lista de roles de usuarios.</p>
+<p class="contenidoDespues">Lista de productos.</p>
 
 @endsection

@@ -71,3 +71,11 @@ Route::get('/productos/index',[ProductoController::class,'index'])->name('produc
 Route::get('/productos/create',[ProductoController::class, 'create'])->name('productos.create');
 
 Route::post('/productos/store',[ProductoController::class, 'store'])->name('productos.store');
+
+Route::get('/productos/edit/{producto}',[ProductoController::class, 'edit'])->name('productos.edit');
+
+Route::put('/productos/update/{producto}',[ProductoController::class, 'update'])->name('productos.update');
+
+Route::delete('/productos/delete/{producto}',[ProductoController::class, 'destroy'])->name('productos.delete');
+
+Route::get('/productos/mostrar/{producto}',[ProductoController::class, 'show'])->name('productos.mostrar');

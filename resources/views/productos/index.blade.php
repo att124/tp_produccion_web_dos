@@ -6,6 +6,14 @@
 
 <h1 class="oferta">Lista de productos</h1>
 
+
+@if(session('completado'))
+    <div class="alert alert-success">
+        {{ session('completado') }}
+    </div>
+@endif
+
+
 <div class="container">
 
     <a href="{{route('productos.create')}}" class="btn btn-primary mb-3">Crear un nuevo producto</a>
@@ -47,14 +55,14 @@
     <tbody>
         @forelse ($productos as $producto)
         <tr>
-            <td><a href="#">{{ $producto->titulo }}</a></td>
-            <td><a href="">{{$producto->categoria->Categoria}}</a></td>
+            <td><a href="{{route('productos.mostrar', $producto->id)}}">{{ $producto->titulo }}</a></td>
+            <td><a href="{{route('categorias.mostrar',$producto->categoria->id)}}">{{$producto->categoria->Categoria}}</a></td>
             <td>{{$producto->marca}}</td>
-            <td>{{$producto->precio}}</td>
+            <td>${{$producto->precio}}</td>
             <td>{{$producto->stock}}</td>
             <td>
-                <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                <form method="POST" action="#" style="display:inline;">
+                <a href="{{route('productos.edit', $producto->id)}}" class="btn btn-warning btn-sm">Editar</a>
+                <form method="POST" action="{{route('productos.delete', $producto->id)}}" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
@@ -63,13 +71,13 @@
         </tr>
         @empty
         <tr>
-            <td colspan="2">No hay ninguna categoria.</td>
+            <td colspan="2">No hay ningun producto en esta categoria.</td>
         </tr>
         @endforelse
     </tbody>
 </table>
 </div>
 
-<p class="contenidoDespues">Lista de categoria de usuarios.</p>
+<p class="contenidoDespues">Lista de productos.</p>
 
 @endsection
