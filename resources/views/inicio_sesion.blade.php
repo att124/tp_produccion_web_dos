@@ -44,8 +44,7 @@
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
-                    <a href="#">¿No tienes una cuenta?</a> |
-                    <a href="#">¿Necesitas ayuda?</a>
+                    <a href="{{route('contacto')}}">¿Necesitas ayuda?</a>
                 </div>
             </div>
         </div>

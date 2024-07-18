@@ -14,13 +14,14 @@ class Producto extends Model
         'precio',
         'stock',
         'marca',
+        'descripcion',
+        'especificacion',
         'imagen1',
         'imagen2',
         'imagen3',
         'imagen4',
         'fk_categoria',
     ];
-
 
     public function categoria()
     {

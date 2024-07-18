@@ -7,51 +7,66 @@
 
 @section('contenido')
 
-<div class="container">
+<div class="container mt-5">
+    <h1 class="tituloProducto">Detalles del producto</h1>
 
-
-    <h1 class="oferta">Detalles del producto</h1>
-
-
-    <div class="row">
-
-        <div class="col-6 imgcentrada" ><img src="{{ asset('storage/' . $producto->imagen1) }}" class="rounded img-fluid mx-auto" alt="{{$producto->titulo}}"></div>
-
-        <div class="col-6 bordesproduct">
-
-            <h2 class="oferta">{{$producto->titulo}}</h2>
-
-            <p class="itemDescripcion">Categoria: {{$producto->categoria->Categoria}}</p>
-
-            <p class="itemDescripcion">Marca: {{$producto->marca}}</p>
-
-            <p class="itemDescripcion">Precio: ${{$producto->precio}}</p>
-
-            <a href="#" class="btn btn-primary ver-mas-btn centradobtncompra">Comprar</a>
-
+    <div class="row centrado2">
+        <div class="col-md-6 d-flex justify-content-center mb-4">
+            <img src="{{ asset('storage/' . $producto->imagen1) }}" class="rounded img-fluid bordesimagenes" alt="{{$producto->titulo}}">
         </div>
-
+        <div class="col-md-6">
+            <div class="card p-4 border-dark">
+                <h2 id="bordetitulo">{{$producto->titulo}}</h2>
+                <p class="texto"><strong>Categoria:</strong> {{$producto->categoria->Categoria}}</p>
+                <p class="texto"><strong>Marca:</strong> {{$producto->marca}}</p>
+                <p class="texto"><strong>Precio:</strong> ${{$producto->precio}}</p>
+                <a href="#" class="btn btn-primary btn-block">Comprar</a>
+            </div>
+        </div>
     </div>
 
-    <section>
-
-       <p> imagenes: </p>
-
+    <div class="col-12"><h3 class="tituloimagenesproducto">Imágenes del producto</h3></div>
+    <section class="mt-5 bordeseccionimgs">
+        <div class="row">
+            <div class="col-md-4 mb-4 centrado">
+                @if ($producto->imagen2 == null)
+                    <p class="imgmargeninferior">No hay imagen disponible</p>
+                @else
+                    <img src="{{ asset('storage/' . $producto->imagen2) }}" class="rounded img-fluid imgmargeninferior bordesimagenes" alt="Imagen del producto">
+                @endif
+            </div>
+            <div class="col-md-4 mb-4 centrado">
+                @if ($producto->imagen3 == null)
+                    <p class="imgmargeninferior">No hay imagen disponible</p>
+                @else
+                    <img src="{{ asset('storage/' . $producto->imagen3) }}" class="rounded img-fluid imgmargeninferior bordesimagenes" alt="Imagen del producto">
+                @endif
+            </div>
+            <div class="col-md-4 mb-4 centrado">
+                @if ($producto->imagen4 == null)
+                    <p class="imgmargeninferior">No hay imagen disponible</p>
+                @else
+                    <img src="{{ asset('storage/' . $producto->imagen4) }}" class="rounded img-fluid imgmargeninferior bordesimagenes" alt="Imagen del producto">
+                @endif
+            </div>
+        </div>
     </section>
 
-<section>
+    <section class="mt-5">
+        <h3 class="titulodescripcion">Descripción</h3>
+        <div class="card p-4 border-dark">
+            <div>{{$producto->descripcion}}</div>
+        </div>
+    </section>
 
-    <p>Descripcion: </p>
-
-</section>
-
-<section>
-
-    <p>Especificaciones técnicas:</p>
-
-</section>
-
+    <section class="mt-5">
+        <h3 class="titulodescripcion">Especificaciones técnicas</h3>
+        <div class="card p-4 border-dark">
+            <div>{{$producto->especificacion}}</div>
+        </div>
+    </section>
 </div>
 
+<p id="margeneselectra">Electra emporium</p>
 
     @endsection

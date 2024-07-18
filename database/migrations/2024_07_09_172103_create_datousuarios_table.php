@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('datousuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',45);
-            $table->string('apellido',45);
-            $table->string('mail',90);
-            $table->integer('dni');
-            $table->string('localidad',80);
-            $table->string('calle',50);
-            $table->integer('altura');
-            $table->integer('piso')->nullable();
+            $table->string('nombre', 45);
+            $table->string('apellido', 45);
+            $table->string('mail', 90)->unique();
+            $table->unsignedInteger('dni')->unique();
+            $table->string('localidad', 80);
+            $table->string('calle', 50);
+            $table->unsignedInteger('altura');
+            $table->unsignedInteger('piso')->nullable();
 
             $table->timestamps();
 

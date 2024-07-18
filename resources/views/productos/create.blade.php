@@ -23,20 +23,29 @@
 
         <div class="mb-3">
             <label for="titulo" class="form-label">Nombre del producto:</label>
-            <input type="text" name="titulo" id="titulo" class="form-control tamanoinput" required>
+            <input type="text" name="titulo" id="titulo" value="{{old('titulo')}}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
             <label for="precio" class="form-label">Precio del producto:</label>
-            <input type="number" name="precio" id="precio" class="form-control tamanoinput" required>
+            <input type="number" name="precio" id="precio" value="{{old('precio')}}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
             <label for="stock" class="form-label">Stock del producto</label>
-            <input type="number" name="stock" id="stock" class="form-control tamanoinput" required>
+            <input type="number" name="stock" id="stock" value="{{old('stock')}}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
             <label for="marca" class="form-label">Marca del producto</label>
-            <input type="text" name="marca" id="marca" class="form-control tamanoinput" required>
+            <input type="text" name="marca" id="marca" value="{{old('marca')}}" class="form-control tamanoinput" required>
         </div>
+        <div class="mb-3">
+            <label for="descripcion">Descripción: </label>
+            <textarea name="descripcion" id="descripcion" value="{{old('descripcion')}}" class="form-control tamanoinput" required> </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="especificaciones">Especificaciones tecnicas: </label>
+            <textarea name="especificacion" id="especificacion" value="{{old('especificacion')}}" class="form-control tamanoinput" required> </textarea>
+        </div>
+
         <div class="mb-3">
             <label for="imagen1">Imagen1: </label>
             <input type="file" name="imagen1" id="imagen1" class="form-control tamanoinput">
@@ -58,12 +67,14 @@
 
             <label for="fk_categoria">Categoria:</label>
             <select name="fk_categoria" id="fk_categoria" class="form-control">
-            <option value="">Todas las Categorías</option>
-            @foreach ($categorias as $categoria)
-                <option value="{{ $categoria->id }}" {{ request('id') == $categoria->id ? 'selected' : '' }}>
+            @forelse ($categorias as $categoria)
+            <option value="{{ $categoria->id }}" {{ request('id') == $categoria->id ? 'selected' : '' }}>
                 {{ $categoria->Categoria }}
             </option>
-            @endforeach
+            @empty
+            <option value="">No hay categorias disponibles</option>
+            @endforelse
+
         </select>
 
 </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProvinciaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +80,9 @@ Route::put('/productos/update/{producto}',[ProductoController::class, 'update'])
 Route::delete('/productos/delete/{producto}',[ProductoController::class, 'destroy'])->name('productos.delete');
 
 Route::get('/productos/mostrar/{producto}',[ProductoController::class, 'show'])->name('productos.mostrar');
+
+Route::get('/provincias/index',[ProvinciaController::class, 'index'])->name('provincias.index');
+
+Route::get('/provincias/create',[ProvinciaController::class, 'create'])->name('provincias.create');
+
+Route::post('/provincias/store',[ProvinciaController::class, 'store'])->name('provincias.store');

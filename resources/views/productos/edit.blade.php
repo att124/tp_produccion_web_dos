@@ -38,6 +38,15 @@
             <input type="text" name="marca" id="marca" value="{{ old('marca', $producto->marca) }}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
+            <label for="descripcion">Descripción: </label>
+            <textarea name="descripcion" id="descripcion" value="{{old('descripcion',$producto->descripcion)}}" class="form-control tamanoinput" required> </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="especificaciones">Especificaciones tecnicas: </label>
+            <textarea name="especificacion" id="especificacion" value="{{old('especificacion',$producto->especificacion)}}" class="form-control tamanoinput" required> </textarea>
+        </div>
+
+        <div class="mb-3">
             <label for="imagen1">Imagen1: </label>
             @if($producto->imagen1)
                 <div>

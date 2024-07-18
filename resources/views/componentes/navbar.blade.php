@@ -42,6 +42,7 @@
                             <li><a class="dropdown-item" href="{{route('categorias.index')}}">Categorias</a></li>
                             <li><a class="dropdown-item" href="#">Usuarios</a></li>
                             <li><a class="dropdown-item" href="{{route('productos.index')}}">Lista de productos</a></li>
+                            <li><a class="dropdown-item" href="{{route('provincias.index')}}">Lista de provincias</a></li>
                         </ul>
                     </li>
 

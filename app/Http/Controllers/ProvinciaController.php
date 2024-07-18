@@ -15,7 +15,7 @@ class ProvinciaController extends Controller
 
         $provincias = Provincia::all();
 
-       return view('provincia.index',compact('provincias')); // compact devuelve un array asociativo con las provincias.
+       return view('provincias.index',compact('provincias')); // compact devuelve un array asociativo con las provincias.
 
 
     }
@@ -25,7 +25,7 @@ class ProvinciaController extends Controller
      */
     public function create()
     {
-        return view('provincia.create');
+        return view('provincias.create');
     }
 
     /**
@@ -34,12 +34,12 @@ class ProvinciaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'Provincia' => 'required|string|max:45',
+            'NombreProvincia' => 'required|string|max:45',
         ]);
 
         Provincia::create($validated);
 
-        return redirect()->route('provincia.index')->with('completado', 'Provincia creada exitosamente.');
+        return redirect()->route('provincias.index')->with('completado', 'Provincia creada exitosamente.');
     }
 
     /**
@@ -64,7 +64,7 @@ class ProvinciaController extends Controller
     public function update(Request $request, Provincia $provincia)
     {
         $validated = $request->validate([
-            'Provincia' => 'required|string|max:45',
+            'NombreProvincia' => 'required|string|max:45',
         ]);
 
         $provincia->update($validated);

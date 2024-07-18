@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('Usuario',45);
-            $table->string('Contraseña',45);
+            $table->string('usuario', 60)->unique();
+            $table->string('contraseña', 60);
             $table->date('Fecha_ingreso');
             $table->boolean('Activo');
             $table->timestamps();

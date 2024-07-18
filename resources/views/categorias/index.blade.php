@@ -40,6 +40,6 @@
 </table>
 </div>
 
-<p class="contenidoDespues">Lista de categoria de usuarios.</p>
+<p class="contenidoDespues">Lista de categoria de productos.</p>
 
 @endsection
