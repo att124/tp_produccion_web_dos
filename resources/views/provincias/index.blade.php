@@ -20,10 +20,10 @@
     <tbody>
         @forelse ($provincias as $provincia)
         <tr>
-            <td><a href="#">{{ $provincia->NombreProvincia }}</a></td>
+            <td>{{ $provincia->NombreProvincia }}</td>
             <td>
-                <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                <form method="POST" action="#" style="display:inline;">
+                <a href=" {{ route('provincias.edit', $provincia->id) }} " class="btn btn-warning btn-sm">Editar</a>
+                <form method="POST" action="{{ route('provincias.destroy', $provincia->id) }}" style="display:inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Borrar</button>

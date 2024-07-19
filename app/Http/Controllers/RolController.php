@@ -29,12 +29,12 @@ class RolController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validacion = $request->validate([
             'nombre' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
         ]);
 
 
-                Rol::create($validated);
+                Rol::create($validacion);
 
 
                 return redirect()->route('roles.index')->with('success', 'Rol creado exitosamente.');
@@ -64,12 +64,12 @@ class RolController extends Controller
     public function update(Request $request, Rol $rol)
     {
 
-        $validated = $request->validate([
+        $validacion = $request->validate([
             'nombre' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
         ]);
 
 
-        $rol->update($validated); // Metodo de eloquent, no es el metodo update propio del controlador.
+        $rol->update($validacion); // Metodo de eloquent, no es el metodo update propio del controlador.
 
 
         return redirect()->route('roles.index')->with('completado', 'Rol actualizado exitosamente.');

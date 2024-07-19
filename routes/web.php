@@ -5,6 +5,8 @@ use App\Http\Controllers\RolController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProvinciaController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\DatousuarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,10 +36,6 @@ Route::get('/inicio_sesion', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('nosotros');
-
-Route::get('/registro', function () {
-    return view('registro');
-})->name('registro');
 
 Route::get('/roles', [RolController::class, 'index'])->name('roles.index');
 
@@ -81,8 +79,7 @@ Route::delete('/productos/delete/{producto}',[ProductoController::class, 'destro
 
 Route::get('/productos/mostrar/{producto}',[ProductoController::class, 'show'])->name('productos.mostrar');
 
-Route::get('/provincias/index',[ProvinciaController::class, 'index'])->name('provincias.index');
+Route::resource('provincias', ProvinciaController::class);
 
-Route::get('/provincias/create',[ProvinciaController::class, 'create'])->name('provincias.create');
+Route::resource('usuarios', UsuarioController::class);
 
-Route::post('/provincias/store',[ProvinciaController::class, 'store'])->name('provincias.store');

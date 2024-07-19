@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-12  col-lg-6 padding-derecha registrarse">
 
-                                <a href="{{ route('registro') }}" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
+                                <a href="{{ route('usuarios.create') }}" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
 
                             </div>
                         </div>

@@ -47,7 +47,7 @@ class ProvinciaController extends Controller
      */
     public function show(Provincia $provincia)
     {
-        return view('provincia.show', compact('provincia'));
+        return view('provincias.show', compact('provincia'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ProvinciaController extends Controller
      */
     public function edit(Provincia $provincia)
     {
-        return view('provincia.edit', compact('provincia'));
+        return view('provincias.edit', compact('provincia'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ProvinciaController extends Controller
 
         $provincia->update($validated);
 
-        return redirect()->route('provincia.index')->with('completado', 'Provincia actualizada exitosamente.');
+        return redirect()->route('provincias.index')->with('completado', 'Provincia actualizada exitosamente.');
     }
 
     /**
@@ -79,6 +79,6 @@ class ProvinciaController extends Controller
     {
         $provincia->delete();
 
-        return redirect()->route('provincia.index')->with('completado', 'Provincia eliminada exitosamente.');
+        return redirect()->route('provincias.index')->with('completado', 'Provincia eliminada exitosamente.');
     }
 }

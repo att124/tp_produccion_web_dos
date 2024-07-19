@@ -19,7 +19,6 @@ class Datousuario extends Model
         'altura',
         'piso',
         'fk_provincia',
-        'fk_localidad',
     ];
 
 
