@@ -35,7 +35,7 @@
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle espaciadoA hovernav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Temporal
+                            Administradores
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>

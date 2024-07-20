@@ -70,7 +70,7 @@
 
 
     <button type="submit" class="btn btn-success tamanobtnvolver">Crear</button>
-    <a href="{{ route('productos.index') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
+    <a href="{{ route('inicio_sesion') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
 
 </div>
 

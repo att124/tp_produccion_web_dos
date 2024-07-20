@@ -513,3 +513,24 @@ justify-content: center;
     text-align: center;
 
 }
+
+.tablausuario{
+
+margin-bottom: 70px;
+
+}
+
+.ColorBotonVerde{
+
+
+        background-color: #028a09;
+        color: white;
+
+
+}
+
+.ColorBotonVerde:hover {
+    background-color: #00ff15;
+    border-color: #000000;
+    color: black;
+}

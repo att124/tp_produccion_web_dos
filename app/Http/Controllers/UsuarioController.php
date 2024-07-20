@@ -102,7 +102,7 @@ class UsuarioController extends Controller
      */
     public function show(Usuario $usuario)
     {
-        //
+        return view('usuarios.show', compact('usuario'));
     }
 
     /**
@@ -110,7 +110,10 @@ class UsuarioController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        //
+
+        $provincias = Provincia::all();
+
+        return view('usuarios.edit', compact('provincias','usuario'));
     }
 
     /**
@@ -118,7 +121,23 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+
+        $validacion = $request->validate([
+            'nombre' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
+            'apellido' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
+            'mail' => ['required', 'string', 'email', 'max:45', 'unique:datousuarios,mail,' . $usuario->datosUsuario->id],
+            'dni' => ['required', 'integer', 'unique:datousuarios,dni,' . $usuario->datosUsuario->id],
+            'localidad' => ['required', 'string', 'max:45'],
+            'calle' => ['required', 'string', 'max:45'],
+            'altura' => ['required', 'string', 'max:45'],
+            'piso' => ['nullable', 'integer'],
+            'fk_provincia' => ['required', 'integer', 'exists:provincias,id'],
+        ]);
+
+        $usuario->datosUsuario->update($validacion);
+
+
+        return redirect()->route('usuarios.index')->with('mensaje', 'Usuario actualizado con éxito');
     }
 
     /**
@@ -126,6 +145,23 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        if($usuario->Activo == true){
+
+
+
+            $usuario->update(['Activo' => false]);
+
+            return redirect()->route('usuarios.index',compact('usuario'))->with('mensaje','Se le ha quitado accesos al usuario');
+
+        } else {
+
+           $usuario->update(['Activo' => true]);
+
+            return redirect()->route('usuarios.index',compact('usuario'))->with('mensaje','Se le ha quitado la sancion al usuario');
+
+        }
+
+
+
     }
 }
