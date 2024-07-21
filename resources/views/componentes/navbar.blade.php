@@ -30,7 +30,7 @@
                         <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('login') }}">Iniciar sesión</a>
+                        <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
                     </li>
                     <li class="nav-item dropdown">
 
