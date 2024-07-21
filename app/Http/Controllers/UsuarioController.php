@@ -45,7 +45,7 @@ class UsuarioController extends Controller
             //Tabla usuarios
 
             'usuario' => 'required|string|max:45|unique:usuarios,usuario',
-            'contrasena' => 'required|string|max:45',
+            'contraseña' => 'required|string|max:45',
 
             //Tabla datosusuario
 
@@ -78,8 +78,8 @@ class UsuarioController extends Controller
 
 
         $usuario = Usuario::create([
-            'Usuario' => $validacion['usuario'],
-            'Contraseña' => bcrypt($validacion['contrasena']),
+            'usuario' => $validacion['usuario'],
+            'contraseña' => bcrypt($validacion['contraseña']),
             'fk_datos_usuario' => $datosUsuario->id,
         ]);
 

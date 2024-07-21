@@ -25,8 +25,8 @@
 <label for="usuario">Usuario: </label>
 <input type="text" name="usuario" id="usuario"  class="form-control tamanoinput" required>
 
-<label for="contrasena">Password: </label>
-<input type="password" name="contrasena" id="contrasena"  class="form-control tamanoinput" required>
+<label for="contraseña">Password: </label>
+<input type="password" name="contraseña" id="contraseña"  class="form-control tamanoinput" required>
 
 <label for="nombre">Nombre:</label>
 <input type="text" name="nombre" id="nombre"  class="form-control tamanoinput" required>
@@ -51,7 +51,7 @@
 
 
 <label for="piso">Piso</label>
-<input type="text" id="piso" name="piso"  class="form-control tamanoinput">
+<input type="number" id="piso" name="piso"  class="form-control tamanoinput">
 
 <div class="mb-3">
 
@@ -70,7 +70,7 @@
 
 
     <button type="submit" class="btn btn-success tamanobtnvolver">Crear</button>
-    <a href="{{ route('inicio_sesion') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
+    <a href="{{ route('login') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
 
 </div>
 
