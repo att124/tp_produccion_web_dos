@@ -10,9 +10,7 @@ class Datousuario extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre',
         'apellido',
-        'mail',
         'dni',
         'localidad',
         'calle',

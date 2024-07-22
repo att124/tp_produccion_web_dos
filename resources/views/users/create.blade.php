@@ -18,24 +18,21 @@
 
 <div class="centrado">
 
-<form action="{{route('usuarios.store')}}" method="POST" class="form-group formulariotamano">
+<form action="{{route('users.store')}}" method="POST" class="form-group formulariotamano">
 
 @csrf
 
-<label for="usuario">Usuario: </label>
-<input type="text" name="usuario" id="usuario"  class="form-control tamanoinput" required>
+<label for="email">Email: </label>
+<input type="text" name="email" id="email"  class="form-control tamanoinput" required>
 
-<label for="contrasena">Password: </label>
-<input type="password" name="contrasena" id="contrasena"  class="form-control tamanoinput" required>
+<label for="password">Password:</label>
+<input type="password" name="password" id="password"  class="form-control tamanoinput" required>
 
-<label for="nombre">Nombre:</label>
-<input type="text" name="nombre" id="nombre"  class="form-control tamanoinput" required>
+<label for="name">Nombre:</label>
+<input type="text" name="name" id="name"  class="form-control tamanoinput" required>
 
 <label for="apellido">Apellido:</label>
 <input type="text" name="apellido" id="apellido"  class="form-control tamanoinput" required>
-
-<label for="mail">Mail: </label>
-<input type="text" name="mail" id="mail"  class="form-control tamanoinput" required>
 
 <label for="dni">DNI:</label>
 <input type="number" id="dni" name="dni"  class="form-control tamanoinput" required>
@@ -70,7 +67,7 @@
 
 
     <button type="submit" class="btn btn-success tamanobtnvolver">Crear</button>
-    <a href="{{ route('inicio_sesion') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
+    <a href="{{ route('login') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
 
 </div>
 

@@ -17,17 +17,18 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 text-center">
-                    <form action="#" method="post" class="border p-5 cc">
+                    <form action="{{ route('login') }}" method="post" class="border p-5 cc">
+                        @csrf
                         <div class="form-group">
-                            <label for="usuario" class="espacioini letrasini">Usuario:</label>
+                            <label for="email" class="espacioini letrasini">email:</label>
                             <div class="centrado">
-                                <input type="text" id="usuario" name="usuario" class="form-control espacioini tamanoinp" required>
+                                <input type="text" id="email" name="email" class="form-control espacioini tamanoinp" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="pass" class="espacioini letrasini">Contraseña:</label>
+                            <label for="password" class="espacioini letrasini">Contraseña:</label>
                             <div class="centrado">
-                                <input type="password" id="pass" name="pass" class="form-control espacioini tamanoinp" required>
+                                <input type="password" id="password" name="password" class="form-control espacioini tamanoinp" required>
                             </div>
                         </div>
                         <div class="row">
@@ -37,7 +38,7 @@
                             </div>
                             <div class="col-12  col-lg-6 padding-derecha registrarse">
 
-                                <a href="{{ route('usuarios.create') }}" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
+                                <a href="{{ route('users.create') }}" class="btn btn-primary btn-block botonTamano registrarse">Registrarse</a>
 
                             </div>
                         </div>

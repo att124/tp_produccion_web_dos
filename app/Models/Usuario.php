@@ -18,7 +18,7 @@ class Usuario extends Model
         'fk_datos_usuario',
     ];
 
-    protected $casts = [ 'fecha_ingreso' => 'date',];
+    protected $casts = [ 'Fecha_ingreso' => 'date',];
 
     protected $hidden = [
        'contrasena',

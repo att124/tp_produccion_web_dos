@@ -1,6 +1,6 @@
 @extends('componentes.layout')
 
-@section('titulo','Usuarios')
+@section('titulo','Users')
 
 @section('contenido')
 
@@ -12,25 +12,23 @@
         <caption>Tabla de usuarios</caption>
         <thead>
             <tr>
-            <th>Usuario</th>
+            <th>Email</th>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Mail</th>
             <th>DNI</th>
             <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @forelse ($usuarios as $usuario)
+        @forelse ($users as $user)
         <tr>
-            <td><a href="{{route('usuarios.show', $usuario->id)}}">{{ $usuario->usuario }}</a></td>
-            <td>{{ $usuario->datosUsuario->nombre}}</td>
-            <td>{{$usuario->datosUsuario->apellido}}</td>
-            <td>{{$usuario->datosUsuario->mail}}</td>
-            <td>{{$usuario->datosUsuario->dni}}</td>
+            <td><a href="{{route('users.show', $user->id)}}">{{ $user->email }}</a></td>
+            <td>{{ $user->name}}</td>
+            <td>{{$user->datosUsuario->apellido}}</td>
+            <td>{{$user->datosUsuario->dni}}</td>
             <td>
-            @if ($usuario->Activo == 1)
+            @if ($user->Activo == 1)
 
             Activo
 
@@ -40,11 +38,11 @@
 
             @endif</td>
             <td>
-                <form method="POST" action="{{ route('usuarios.destroy', $usuario->id) }}" style="display:inline;">
+                <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display:inline;">
                     @csrf
                     @method('DELETE')
 
-                    @if ($usuario->Activo == 1)
+                    @if ($user->Activo == 1)
 
                     <button type="submit" class="btn btn-danger btn-sm">Banear</button>
 
@@ -59,7 +57,7 @@
         </tr>
         @empty
         <tr>
-            <td colspan="6">No hay usuario aún.</td>
+            <td colspan="7">No hay usuario aún.</td>
         </tr>
         @endforelse
     </tbody>

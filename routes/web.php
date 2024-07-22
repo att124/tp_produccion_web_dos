@@ -5,8 +5,9 @@ use App\Http\Controllers\RolController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProvinciaController;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DatousuarioController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,9 +30,9 @@ Route::get('/contacto', function () {
     return view('contactos');
 })->name('contacto');
 
-Route::get('/inicio_sesion', function () {
-    return view('inicio_sesion');
-})->name('inicio_sesion');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::get('/about', function () {
     return view('about');
@@ -81,5 +82,9 @@ Route::get('/productos/mostrar/{producto}',[ProductoController::class, 'show'])-
 
 Route::resource('provincias', ProvinciaController::class);
 
-Route::resource('usuarios', UsuarioController::class);
+Route::resource('users', UserController::class);
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 

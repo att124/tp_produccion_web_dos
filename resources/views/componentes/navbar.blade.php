@@ -30,7 +30,7 @@
                         <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('inicio_sesion') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('inicio_sesion') }}">Iniciar sesión</a>
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('login') }}">Iniciar sesión</a>
                     </li>
                     <li class="nav-item dropdown">
 
@@ -40,7 +40,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('roles.index')}}">Roles</a></li>
                             <li><a class="dropdown-item" href="{{route('categorias.index')}}">Categorias</a></li>
-                            <li><a class="dropdown-item" href="{{ route('usuarios.index') }}">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="{{ route('users.index') }}">Usuarios</a></li>
                             <li><a class="dropdown-item" href="{{route('productos.index')}}">Lista de productos</a></li>
                             <li><a class="dropdown-item" href="{{route('provincias.index')}}">  Lista de provincias</a></li>
                         </ul>

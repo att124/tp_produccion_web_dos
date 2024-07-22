@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'Fecha_ingreso',
+        'Activo',
+        'fk_rol',
+        'fk_datos_usuario',
     ];
 
     /**
@@ -41,5 +45,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'Fecha_ingreso' => 'date',
     ];
+
+    public function rol()
+    {
+        return $this->belongsTo(Rol::class, 'fk_rol');
+    }
+
+
+    public function datosUsuario()
+    {
+        return $this->belongsTo(Datousuario::class, 'fk_datos_usuario');
+    }
 }
