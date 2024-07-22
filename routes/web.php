@@ -28,7 +28,7 @@ Route::get('/index', function () {
 
 Route::get('/contacto', function () {
     return view('contactos');
-})->name('contacto');
+})->middleware('Userlogin')->name('contacto');
 
 Route::get('/login', function () {
     return view('login');

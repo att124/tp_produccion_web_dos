@@ -6,6 +6,8 @@
 
 <h1 class="oferta">Categorias</h1>
 
+<pre>{{ Auth::user()}}</pre>
+
 <div class="container">
 
     <a href="{{ route('categorias.crear') }}" class="btn btn-primary mb-3">Crear nueva categoria</a>
