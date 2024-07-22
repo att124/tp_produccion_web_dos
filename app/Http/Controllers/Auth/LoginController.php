@@ -24,7 +24,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->route('categorias.index');
+            return redirect()->route('index');
         }
 
         throw ValidationException::withMessages([

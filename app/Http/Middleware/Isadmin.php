@@ -20,7 +20,7 @@ class Isadmin
         $user = Auth::user();
 
         if (!$user) {
-            return redirect('/login');
+            return redirect('index');
         }
 
         // Verifica si el usuario es administrador o usuario

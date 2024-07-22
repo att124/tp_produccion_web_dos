@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+Route::get('/home', function () {
+    return view('index');
+})->name('home');
+
+
 Route::get('/index', function () {
     return view('index');
 })->name('index');
@@ -29,10 +34,6 @@ Route::get('/index', function () {
 Route::get('/contacto', function () {
     return view('contactos');
 })->middleware('Userlogin')->name('contacto');
-
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
 
 Route::get('/about', function () {
     return view('about');
@@ -84,7 +85,7 @@ Route::resource('provincias', ProvinciaController::class)->middleware('Isadmin:a
 
 Route::resource('users', UserController::class);
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -93,3 +94,9 @@ Route::middleware('Isadmin:admin')->group(function () {
         'index',
     ]);
 });
+
+
+Route::middleware('guest')->group(function(){
+    Route::resource('users', UserController::class)->only([
+        'create',
+    ]); });

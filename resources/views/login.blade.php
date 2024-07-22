@@ -5,6 +5,7 @@
 @section('contenido')
 
 <main>
+<p>{{Auth::check()}}</p>
 
     <!--<h1 class="oferta text-center mt-5">Login</h1>
     -->

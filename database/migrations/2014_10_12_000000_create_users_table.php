@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->date('Fecha_ingreso')->nullable()->default(DB::raw('CURRENT_DATE'));
             $table->boolean('Activo')->default(true);
-            $table->unsignedBigInteger('fk_rol')->nullable()->default(1);
+            $table->unsignedBigInteger('fk_rol')->nullable()->default(2);
             $table->unsignedBigInteger('fk_datos_usuario');
 
             $table->foreign('fk_rol')->references('id')->on('rols')->onDelete('cascade');
