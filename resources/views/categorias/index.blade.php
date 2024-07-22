@@ -6,7 +6,6 @@
 
 <h1 class="oferta">Categorias</h1>
 
-<pre>{{ Auth::user()}}</pre>
 
 <div class="container">
 

@@ -13,6 +13,7 @@
         <thead>
             <tr>
             <th>Email</th>
+            <th>Rol:</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>DNI</th>
@@ -24,6 +25,23 @@
         @forelse ($users as $user)
         <tr>
             <td><a href="{{route('users.show', $user->id)}}">{{ $user->email }}</a></td>
+            <td>
+                    @if ($user->fk_rol == 1)
+
+                    Administrador
+
+                    @elseif ($user->fk_rol == 2)
+
+                    Usuario
+
+                    @else
+
+                    rol desconocido.
+
+                    @endif
+
+
+            </td>
             <td>{{ $user->name}}</td>
             <td>{{$user->datosUsuario->apellido}}</td>
             <td>{{$user->datosUsuario->dni}}</td>
@@ -41,17 +59,22 @@
                 <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display:inline;">
                     @csrf
                     @method('DELETE')
+ @if ($user->fk_rol != 1)
 
-                    @if ($user->Activo == 1)
+                @if ($user->Activo == 1)
 
-                    <button type="submit" class="btn btn-danger btn-sm">Banear</button>
+                <button type="submit" class="btn btn-danger btn-sm">Banear</button>
 
-                    @else
+                @else
 
-                    <button type="submit" class="btn ColorBotonVerde btn-sm">Desbloquear</button>
+                <button type="submit" class="btn ColorBotonVerde btn-sm">Desbloquear</button>
 
-                    @endif
+                @endif
+ @else
 
+ El usuario es Administrador
+
+ @endif
                 </form>
             </td>
         </tr>

@@ -29,9 +29,34 @@
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
+
+
+                    @if (Auth::check())
+
+                    <li class="nav-item">
+                        <a href="{{ route('users.show', Auth::user()->id) }}" class="nav-link espaciadoA hovernav"> {{ Auth::user()->name}} </a>
+                    </li>
+
+                    @else
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('login') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('login') }}">Iniciar sesión</a>
                     </li>
+                    @endif
+
+                    @auth
+
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="nav-link espaciadoA hovernav">Cerrar sesión</button>
+                        </form>
+                    </li>
+
+
+                    @endauth
+
+                    @auth
+                    @if (Auth::user()->fk_rol == 1)
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle espaciadoA hovernav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +70,8 @@
                             <li><a class="dropdown-item" href="{{route('provincias.index')}}">  Lista de provincias</a></li>
                         </ul>
                     </li>
-
+                    @endif
+                    @endauth
 
                 </ul>
                 <form class="d-flex" role="search">

@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <h1 class="oferta">Panel del usuario: {{ $usuario->usuario }} </h1>
+    <h1 class="oferta">Panel del usuario: {{ $user->name }} </h1>
 
     <table class="table table-striped table-bordered tablausuario">
         <caption>Datos Personales: </caption>
@@ -24,17 +24,17 @@
 
 <tbody>
 
-    <td>{{ $usuario->datosUsuario->nombre }}</td>
-    <td>{{ $usuario->datosUsuario->apellido }}</td>
-    <td>{{ $usuario->datosUsuario->mail }}</td>
-    <td>{{ $usuario->datosUsuario->dni }}</td>
-    <td>{{ $usuario->datosUsuario->localidad}}</td>
-    <td>{{ $usuario->datosUsuario->calle}}</td>
-    <td>{{ $usuario->datosUsuario->altura}}</td>
+    <td>{{ $user->name }}</td>
+    <td>{{ $user->datosUsuario->apellido }}</td>
+    <td>{{ $user->email }}</td>
+    <td>{{ $user->datosUsuario->dni }}</td>
+    <td>{{ $user->datosUsuario->localidad}}</td>
+    <td>{{ $user->datosUsuario->calle}}</td>
+    <td>{{ $user->datosUsuario->altura}}</td>
     <td>
-        @if ($usuario->datosUsuario->piso != null)
+        @if ($user->datosUsuario->piso != null)
 
-        {{ $usuario->datosUsuario->piso }}
+        {{ $user->datosUsuario->piso }}
 
         @else
 
@@ -48,7 +48,7 @@
 
 
 <div class="centrado">
-    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-success tamanobtnvolver">Editar</a>
+    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success tamanobtnvolver">Editar</a>
     <a href="{{ route('index') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
 </div>
 
