@@ -37,7 +37,7 @@ class RolController extends Controller
                 Rol::create($validacion);
 
 
-                return redirect()->route('roles.index')->with('success', 'Rol creado exitosamente.');
+                return redirect()->route('roles.index')->with('completado', 'Rol creado exitosamente.');
 
     }
 

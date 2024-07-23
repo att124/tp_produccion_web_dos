@@ -70,11 +70,11 @@ class UserController extends Controller
                 'fk_datos_usuario' => $datosUsuario->id,
             ]);
 
-            return redirect()->route('users.index')->with('message', 'User created successfully');
+            return redirect()->route('users.index')->with('mensaje', 'Usuario creado');
         } catch (\Illuminate\Database\QueryException $e) {
-            return redirect()->back()->withErrors(['error' => 'Database error: ' . $e->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'error de bdd: ' . $e->getMessage()]);
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => 'Unexpected error: ' . $e->getMessage()]);
+            return redirect()->back()->withErrors(['error' => 'Error :' . $e->getMessage()]);
         }
     }
 
@@ -111,7 +111,7 @@ class UserController extends Controller
             'fk_provincia' => ['required', 'integer', 'exists:provincias,id'],
         ]);
 
-            return redirect()->route('users.index')->with('message', 'User updated successfully');
+            return redirect()->route('users.index')->with('mensaje', 'Usuario actualizado');
 
 
     }
@@ -127,13 +127,13 @@ class UserController extends Controller
 
             $user->update(['Activo' => false]);
 
-            return redirect()->route('usuarios.index',compact('usuario'))->with('mensaje','Se le ha quitado accesos al usuario');
+            return redirect()->route('users.index',compact('user'))->with('mensaje','Se le ha quitado accesos al usuario');
 
         } else {
 
            $user->update(['Activo' => true]);
 
-            return redirect()->route('usuarios.index',compact('usuario'))->with('mensaje','Se le ha quitado la sancion al usuario');
+            return redirect()->route('users.index',compact('user'))->with('mensaje','Se le ha quitado la sancion al usuario');
 
         }
     }

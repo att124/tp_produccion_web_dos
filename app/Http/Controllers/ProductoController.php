@@ -160,4 +160,18 @@ class ProductoController extends Controller
        return redirect()->route('productos.index')->with('producto eliminado','El producto ha sido eliminado');
 
     }
+
+    public function buscar(Request $request)
+    {
+        $query = $request->input('query');
+
+        $productos = Producto::where('titulo', 'LIKE', "%{$query}%")->get();
+
+        return view('productos.resultados', compact('productos','query'));
+
+    }
+
+
+
+
 }

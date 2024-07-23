@@ -8,6 +8,7 @@ use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DatousuarioController;
 use App\Http\Controllers\Auth\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,7 +88,7 @@ Route::resource('users', UserController::class);
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->middleware('Userlogin')->name('logout');
 
 Route::middleware('Isadmin:admin')->group(function () {
     Route::resource('users', UserController::class)->only([
@@ -100,3 +101,8 @@ Route::middleware('guest')->group(function(){
     Route::resource('users', UserController::class)->only([
         'create',
     ]); });
+
+
+Route::get('/productos/buscar',[ProductoController::class, 'buscar'])->name('productos.buscar');
+
+
