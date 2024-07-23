@@ -73,7 +73,7 @@
 
 <section>
 
-    <h2 class="oferta">Lo mas vendido </h2>
+    <h2 class="oferta"> Entretenimiento </h2>
 
 <div class="row">
 
@@ -109,7 +109,7 @@
 
 </div>
 
-<h3 class="oferta"> Productos destacados </h3>
+<h3 class="oferta"> Cuidado Personal </h3>
 
 <div class="row">
 
