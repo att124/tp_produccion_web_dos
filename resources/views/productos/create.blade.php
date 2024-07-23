@@ -92,6 +92,6 @@
 
 
 
-<p class="contenidoDespues">Lista de productos.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

@@ -8,6 +8,12 @@
 
 <div class="container">
 
+    @if(session('mensaje'))
+    <div class="alert alert-success">
+        {{ session('mensaje') }}
+    </div>
+    @endif
+
     <table class="table table-striped table-bordered">
         <caption>Tabla de usuarios</caption>
         <thead>
@@ -87,6 +93,6 @@
 </table>
 </div>
 
-<p class="contenidoDespues">Lista de usuarios.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

@@ -22,6 +22,6 @@
     </form>
 </div>
 
-<p class="contenidoDespues">Lista de categorías existentes.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

@@ -22,6 +22,6 @@
     </form>
 </div>
 
-<p class="contenidoDespues">Agregar provincia.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

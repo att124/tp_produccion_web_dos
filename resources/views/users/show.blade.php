@@ -8,6 +8,13 @@
 
     <h1 class="oferta">Panel del usuario: {{ $user->name }} </h1>
 
+    @if(session('mensaje'))
+    <div class="alert alert-success">
+        {{ session('mensaje') }}
+    </div>
+    @endif
+
+
     <table class="table table-striped table-bordered tablausuario">
         <caption>Datos Personales: </caption>
 

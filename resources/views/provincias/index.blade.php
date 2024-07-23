@@ -39,6 +39,6 @@
 </table>
 </div>
 
-<p class="contenidoDespues">Lista de provincias.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

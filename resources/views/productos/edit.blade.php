@@ -110,6 +110,6 @@
 
 
 
-<p class="contenidoDespues">Lista de roles de usuarios.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

@@ -91,8 +91,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $roles = Rol::all();
-        return view('users.edit', compact('roles', 'user'));
+        $provincias = Provincia::all();
+        return view('users.edit', compact('provincias', 'user'));
     }
 
     /**
@@ -111,7 +111,9 @@ class UserController extends Controller
             'fk_provincia' => ['required', 'integer', 'exists:provincias,id'],
         ]);
 
-            return redirect()->route('users.index')->with('mensaje', 'Usuario actualizado');
+            $user->datosUsuario->update($validacion);
+
+            return redirect()->route('users.show', $user->id)->with('mensaje', 'Usuario actualizado');
 
 
     }

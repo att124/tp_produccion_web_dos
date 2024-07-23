@@ -106,3 +106,8 @@ Route::middleware('guest')->group(function(){
 Route::get('/productos/buscar',[ProductoController::class, 'buscar'])->name('productos.buscar');
 
 
+Route::middleware('AutorizacionPerfil')->group(function () {
+    Route::resource('users', UserController::class)->only([
+        'show',
+    ]);
+});

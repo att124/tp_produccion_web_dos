@@ -41,6 +41,6 @@
 
 
 
-<p class="contenidoDespues">Agregar algo mas.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection

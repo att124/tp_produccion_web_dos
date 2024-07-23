@@ -41,6 +41,6 @@
 </table>
 </div>
 
-<p class="contenidoDespues">Lista de categoria de productos.</p>
+<p class="espaciado">Electra emporium</p>
 
 @endsection
