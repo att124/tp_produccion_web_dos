@@ -27,14 +27,14 @@ class Isadmin
         $isAdmin = $user->fk_rol == 1;
         $isUser = $user->fk_rol == 2;
 
-        // Si se espera un administrador y el usuario no es uno, redirige
+
         if ($role === 'administrador' && !$isAdmin) {
-            return redirect('index'); // Redirige a una página de inicio si el usuario no es admin
+            return redirect('index');
         }
 
-        // Si se espera un usuario y el usuario es un administrador, redirige
+
         if ($role === 'user' && !$isUser) {
-            return redirect('users.index'); // Redirige a una página de administración si el usuario es admin
+            return redirect('users.index');
         }
 
         return $next($request);

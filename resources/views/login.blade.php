@@ -13,9 +13,15 @@
         <img src="{{asset('imgs/LogoElectra.png')}}" alt="Logo de electra emporiun" width="300" height="70" class="LogoEspacio">
     </div>
 
-
     <section class="mt-5">
         <div class="container">
+
+            @if(session('mensaje'))
+            <div class="alert alert-success">
+                {{ session('mensaje') }}
+            </div>
+            @endif
+
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 text-center">
                     <form action="{{ route('login') }}" method="post" class="border p-5 cc">

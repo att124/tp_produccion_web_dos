@@ -22,6 +22,17 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
+
+            $user = Auth::user();
+
+            if ($user->Activo == 0) {
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+
+                return redirect()->route('login')->with('mensaje', 'El usuario se encuentra baneado.');
+            }
+
             $request->session()->regenerate();
 
             return redirect()->route('index');
