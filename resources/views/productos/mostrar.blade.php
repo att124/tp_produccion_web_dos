@@ -20,7 +20,12 @@
                 <p class="texto"><strong>Categoria:</strong> {{$producto->categoria->Categoria}}</p>
                 <p class="texto"><strong>Marca:</strong> {{$producto->marca}}</p>
                 <p class="texto"><strong>Precio:</strong> ${{$producto->precio}}</p>
-                <a href="#" class="btn btn-primary btn-block">Comprar</a>
+                <form action="{{ route('carrito.store') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $producto->id }}">
+
+                    <button type="submit" class="btn btn-primary btn-block btncomprar">Comprar</button>
+                </form>
             </div>
         </div>
     </div>

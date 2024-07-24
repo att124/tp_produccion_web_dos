@@ -55,6 +55,8 @@
 
                     @endauth
 
+                    <li class="nav-item"> <a class="nav-link {{ Request::is('carrito.index') ? 'active' : '' }} espaciadoA hovernav" href="{{route('carrito.index')}}">Carrito</a></li>
+
                     @auth
                     @if (Auth::user()->fk_rol == 1)
                     <li class="nav-item dropdown">

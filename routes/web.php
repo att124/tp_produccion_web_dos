@@ -8,6 +8,7 @@ use App\Http\Controllers\ProvinciaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DatousuarioController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CarritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +112,12 @@ Route::middleware('AutorizacionPerfil')->group(function () {
         'show',
     ]);
 });
+
+
+Route::get('/carrito/index',[CarritoController::class, 'index'])->middleware('Userlogin')->name('carrito.index');
+
+Route::post('/carrito', [CarritoController::class, 'store'])->middleware('Userlogin')->name('carrito.store');
+
+Route::put('/carrito/{id}', [CarritoController::class, 'update'])->middleware('Userlogin')->name('carrito.update');
+
+Route::delete('/carrito/{id}', [CarritoController::class, 'destroy'])->middleware('Userlogin')->name('carrito.destroy');
