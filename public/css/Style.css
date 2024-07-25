@@ -173,6 +173,9 @@ display: flex;
     max-width: 350px;
     margin: auto;
     padding: 10px;
+    background-color: bisque;
+    border-radius: 10px;
+    border: solid 3px black;
 
 }
 
@@ -554,3 +557,16 @@ margin-bottom: 70px;
 margin-bottom: 30px;
 
 }
+
+.bg-pink{
+
+background-color: pink;
+
+}
+
+
+.hoverdropitems:hover{
+
+    color: rgb(254, 3, 3) !important;
+    background-color: pink !important;
+    }
