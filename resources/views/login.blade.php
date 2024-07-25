@@ -52,7 +52,7 @@
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
-                    <a href="{{route('contacto')}}">¿Necesitas ayuda?</a>
+                    <a href="{{route('contactos.create')}}">¿Necesitas ayuda?</a>
                 </div>
             </div>
         </div>

@@ -47,7 +47,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request ->validate([
+        $validacion = $request ->validate([
             'titulo' => ['required', 'string', 'max:45'],
             'precio' => ['required', 'numeric'],
             'stock' => ['required', 'integer'],
@@ -68,17 +68,17 @@ class ProductoController extends Controller
 
 
         Producto::create([
-            'titulo' => $validated['titulo'],
-            'precio' => $validated['precio'],
-            'stock' => $validated['stock'],
-            'marca' => $validated['marca'],
-            'descripcion' => $validated['descripcion'],
-            'especificacion' => $validated['especificacion'],
+            'titulo' => $validacion['titulo'],
+            'precio' => $validacion['precio'],
+            'stock' => $validacion['stock'],
+            'marca' => $validacion['marca'],
+            'descripcion' => $validacion['descripcion'],
+            'especificacion' => $validacion['especificacion'],
             'imagen1' => $imagen1,
             'imagen2' => $imagen2,
             'imagen3' => $imagen3,
             'imagen4' => $imagen4,
-            'fk_categoria' => $validated['fk_categoria']
+            'fk_categoria' => $validacion['fk_categoria']
         ]);
 
         return redirect()->route('productos.index')->with('completado', 'producto creado exitosamente.');
@@ -108,7 +108,7 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        $validated = $request ->validate([
+        $validacion = $request ->validate([
             'titulo' => ['required', 'string', 'max:45'],
             'precio' => ['required', 'numeric'],
             'stock' => ['required', 'integer'],
@@ -134,17 +134,17 @@ class ProductoController extends Controller
 
 
         $producto->update([
-            'titulo' => $validated['titulo'],
-            'precio' => $validated['precio'],
-            'stock' => $validated['stock'],
-            'marca' => $validated['marca'],
-            'descripcion' => $validated['descripcion'],
-            'especificacion' => $validated['especificaciones'],
+            'titulo' => $validacion['titulo'],
+            'precio' => $validacion['precio'],
+            'stock' => $validacion['stock'],
+            'marca' => $validacion['marca'],
+            'descripcion' => $validacion['descripcion'],
+            'especificacion' => $validacion['especificaciones'],
             'imagen1' => $imagen1,
             'imagen2' => $imagen2,
             'imagen3' => $imagen3,
             'imagen4' => $imagen4,
-            'fk_categoria' => $validated['fk_categoria']
+            'fk_categoria' => $validacion['fk_categoria']
         ]);
         return redirect()->route('productos.index')->with('completado', 'Producto actualizado exitosamente.');
     }

@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DatousuarioController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\ContactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,6 @@ Route::get('/index', function () {
     return view('index');
 })->name('index');
 
-Route::get('/contacto', function () {
-    return view('contactos');
-})->middleware('Userlogin')->name('contacto');
 
 Route::get('/about', function () {
     return view('about');
@@ -121,3 +119,17 @@ Route::post('/carrito', [CarritoController::class, 'store'])->middleware('Userlo
 Route::put('/carrito/{id}', [CarritoController::class, 'update'])->middleware('Userlogin')->name('carrito.update');
 
 Route::delete('/carrito/{id}', [CarritoController::class, 'destroy'])->middleware('Userlogin')->name('carrito.destroy');
+
+Route::get('/contactos/index' ,[ContactoController::class , 'index'])->middleware('Isadmin:administrador')->name('contactos.index');
+
+Route::get('/contactos/create', [ContactoController::class, 'create'])->middleware('Userlogin')->name('contactos.create');
+
+Route::post('/contactos/store',[ContactoController::class, 'store'])->middleware('Userlogin')->name('contactos.store');
+
+Route::get('/contactos/{contacto}/edit',[ContactoController::class, 'edit'])->middleware('Isadmin:administrador')->name('contactos.edit');
+
+Route::put('contactos/{contacto}/update',[ContactoController::class, 'update'])->middleware('Isadmin:administrador')->name('contactos.update');
+
+Route::delete('contactos/{contacto}/delete',[ContactoController::class, 'destroy'])->middleware('Isadmin:administrador')->name('contactos.delete');
+
+Route::get('contactos/{contacto}/mostrar', [ContactoController::class, 'show'])->name('contactos.mostrar');

@@ -33,11 +33,11 @@ class ProvinciaController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validacion = $request->validate([
             'NombreProvincia' => 'required|string|max:45',
         ]);
 
-        Provincia::create($validated);
+        Provincia::create($validacion);
 
         return redirect()->route('provincias.index')->with('completado', 'Provincia creada exitosamente.');
     }
@@ -63,11 +63,11 @@ class ProvinciaController extends Controller
      */
     public function update(Request $request, Provincia $provincia)
     {
-        $validated = $request->validate([
+        $validacion = $request->validate([
             'NombreProvincia' => 'required|string|max:45',
         ]);
 
-        $provincia->update($validated);
+        $provincia->update($validacion);
 
         return redirect()->route('provincias.index')->with('completado', 'Provincia actualizada exitosamente.');
     }

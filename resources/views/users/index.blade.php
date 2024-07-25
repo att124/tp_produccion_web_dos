@@ -65,7 +65,7 @@
                 <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display:inline;">
                     @csrf
                     @method('DELETE')
- @if ($user->fk_rol != 1)
+        @if ($user->fk_rol != 1)
 
                 @if ($user->Activo == 1)
 
@@ -76,7 +76,7 @@
                 <button type="submit" class="btn ColorBotonVerde btn-sm">Desbloquear</button>
 
                 @endif
- @else
+        @else
 
  El usuario es Administrador
 

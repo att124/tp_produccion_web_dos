@@ -59,6 +59,57 @@
     <a href="{{ route('index') }}" class="btn btn-primary mb-3 margenesbtn tamanobtnvolver">Volver</a>
 </div>
 
+<h2 class="oferta">Consultas realizadas</h2>
+
+<table class="table table-striped table-bordered tablausuario">
+    <caption>Consultas: </caption>
+
+    <thead>
+        <th>Titulo</th>
+        <th>Asunto</th>
+        <th>Estado</th>
+        <th>Ver</th>
+    </thead>
+
+    <tbody>
+
+        @forelse ($contactos as $contacto)
+
+        <td>{{$contacto->titulo}}</td>
+        <td>{{$contacto->asunto}}</td>
+        <td>
+        @if ($contacto->estado == 0)
+
+            Sin responder
+
+        @else
+
+            Respondido.
+
+            @endif</td>
+
+        <td>
+            @if ($contacto->estado == 1)
+            <a href="{{ route('contactos.mostrar',$contacto) }}" class="btn btn-warning btn-sm">Ver respuesta</a>
+
+            @else
+
+            Sin acciones disponibles.
+
+            @endif
+
+        </td>
+
+        @empty
+
+        <td colspan="4">No realizaste ninguna consulta</td>
+
+        @endforelse
+
+    </tbody>
+
+</table>
+
 <p id="margeneselectra">Electra emporium</p>
 
 </div>

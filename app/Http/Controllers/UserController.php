@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Datousuario;
 use App\Models\Provincia;
+use App\Models\Contacto;
 
 class UserController extends Controller
 {
@@ -17,6 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+
         return view('users.index', compact('users'));
     }
 
@@ -83,7 +85,11 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+
+        $contactos = Contacto::where('fk_user', $user->id)->get();
+
+
+        return view('users.show', compact('user','contactos'));
     }
 
     /**

@@ -17,7 +17,7 @@
 
                 <div class="col-4">
                     <div class="col-12 centrado"><h3 class="espaciado">Ayuda</h3></div>
-                    <div class="col-12 centrado"><a href="{{route('contacto')}}" class="espBajo">Contactos</a></div>
+                    <div class="col-12 centrado"><a href="{{route('contactos.create')}}" class="espBajo">Contactos</a></div>
                 </div>
 
                 <div class="col-4">

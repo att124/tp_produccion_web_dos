@@ -26,7 +26,7 @@
                 <select name="fk_categoria" class="form-control">
                     <option value="">Todas las Categorías</option>
                     @foreach ($categorias as $categoria)
-                        <option value="{{ $categoria->id }}" {{ request('id') == $categoria->id ? 'selected' : '' }}>
+                        <option value="{{ $categoria->id }}">
                             {{ $categoria->Categoria }}
                         </option>
                     @endforeach
@@ -71,7 +71,7 @@
         </tr>
         @empty
         <tr>
-            <td colspan="2">No hay ningun producto en esta categoria.</td>
+            <td colspan="6">No hay ningun producto en esta categoria.</td>
         </tr>
         @endforelse
     </tbody>

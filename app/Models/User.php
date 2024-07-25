@@ -58,4 +58,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Datousuario::class, 'fk_datos_usuario');
     }
+
+    public function contactos()
+    {
+        return $this->hasMany(Contacto::class, 'fk_user');
+    }
+
 }

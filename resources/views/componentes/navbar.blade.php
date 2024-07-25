@@ -25,7 +25,7 @@
                     </li>
                     <li class="nav-item">
                         <!-- Laravel verifica si el enlace que se encuentra activo es 'contacto' en caso de ser verdadero devuelve 'activo' y falso '' -->
-                        <a class="nav-link {{ Request::is('contacto') ? 'active' : '' }} espaciadoB hovernav" href="{{route ('contacto')}}">Contacto</a>
+                        <a class="nav-link {{ Request::is('contactos/create') ? 'active' : '' }} espaciadoB hovernav" href="{{route ('contactos.create')}}">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
@@ -78,6 +78,7 @@
                         </a>
                         <ul class="dropdown-menu bg-pink">
                             <li><a class="dropdown-item hoverdropitems" href="{{route('roles.index')}}">Roles</a></li>
+                            <li><a class="dropdown-item hoverdropitems" href="{{route('contactos.index')}}">Consultas</a></li>
                             <li><a class="dropdown-item hoverdropitems" href="{{route('categorias.index')}}">Categorias</a></li>
                             <li><a class="dropdown-item hoverdropitems" href="{{ route('users.index') }}">Usuarios</a></li>
                             <li><a class="dropdown-item hoverdropitems" href="{{route('productos.index')}}">Lista de productos</a></li>

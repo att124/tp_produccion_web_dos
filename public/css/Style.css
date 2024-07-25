@@ -570,3 +570,29 @@ background-color: pink;
     color: rgb(254, 3, 3) !important;
     background-color: pink !important;
     }
+
+.margenescontacto{
+
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+}
+
+.colorcontacto{
+
+    background-color: bisque;
+    border-radius: 10px;
+    border: solid black 5px;
+
+
+}
+
+
+.colortextocontacto{
+
+font-size: 1.2em;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+

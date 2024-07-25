@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Contacto extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'titulo',
+        'asunto',
+        'consulta',
+        'respuesta',
+        'estado',
+        'fk_user',
+    ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'fk_user');
+    }
+
 }
