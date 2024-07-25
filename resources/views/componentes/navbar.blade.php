@@ -33,31 +33,42 @@
 
                     @if (Auth::check())
 
-                    <li class="nav-item">
-                        <a href="{{ route('users.show', Auth::user()->id) }}" class="nav-link espaciadoA hovernav"> {{ Auth::user()->name}} </a>
-                    </li>
 
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('login') }}">Iniciar sesión</a>
-                    </li>
-                    @endif
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle espaciadoA hovernav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{Auth::user()->name}}
+                        </a>
 
-                    @auth
+            <ul class="dropdown-menu">
+                    <li class="nav-item">
+                        <a href="{{ route('users.show', Auth::user()->id) }}" class="dropdown-item">Perfil </a>
+                    </li>
 
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="nav-link espaciadoA hovernav">Cerrar sesión</button>
+                            <button type="submit" class="dropdown-item">Cerrar sesión</button>
                         </form>
+                    </li>
+            </ul>
+                    @else
+
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('login') }}">Iniciar sesión</a>
                     </li>
 
 
-                    @endauth
+                    @endif
+
+
+
 
                     <li class="nav-item"> <a class="nav-link {{ Request::is('carrito.index') ? 'active' : '' }} espaciadoA hovernav" href="{{route('carrito.index')}}">Carrito</a></li>
 
                     @auth
+
+
                     @if (Auth::user()->fk_rol == 1)
                     <li class="nav-item dropdown">
 
