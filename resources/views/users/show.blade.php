@@ -74,7 +74,7 @@
     <tbody>
 
         @forelse ($contactos as $contacto)
-
+        <tr>
         <td>{{$contacto->titulo}}</td>
         <td>{{$contacto->asunto}}</td>
         <td>
@@ -99,6 +99,7 @@
             @endif
 
         </td>
+    </tr>
 
         @empty
 

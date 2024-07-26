@@ -1,6 +1,6 @@
 @extends('componentes.layout')
 
-@section('titulo','Consulta {{ $contacto->titulo }}')
+@section('titulo',$contacto->titulo )
 
 @section('contenido')
 
@@ -23,7 +23,7 @@
         </div>
 
         <div class="centrado espaciobtnvolver">
-            <a href="{{ route('index') }}" class="btn btn-primary mb-3 tamanobtnvolver">Volver</a>
+            <a href="{{ route('users.show', Auth::user()->id) }}" class="btn btn-primary mb-3 tamanobtnvolver">Volver</a>
         </div>
 
 

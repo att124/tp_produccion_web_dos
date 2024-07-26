@@ -24,7 +24,7 @@
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $producto->id }}">
 
-                    <button type="submit" class="btn btn-primary btn-block btncomprar">Comprar</button>
+                    <button type="submit" class="btn btn-primary btn-block btncomprar">Agregar al carrito</button>
                 </form>
             </div>
         </div>

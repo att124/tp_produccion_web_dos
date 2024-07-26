@@ -4,6 +4,12 @@ body{
 
 }
 
+footer{
+
+    border-top: solid 2px black;
+
+}
+
 main {
 
     padding: 20px;
@@ -109,7 +115,7 @@ margin-bottom: 50px;
 
 .colorfooter{
 
-background-color: pink;
+background-color: #6C3483;
 
 padding: 12px;
 
@@ -334,6 +340,8 @@ background-color:bisque;
 
 .margenesLaterales{
 
+margin-top: 50px;
+margin-bottom: 100px;
 margin-left: 10px;
 margin-right: 10px;
 
@@ -382,6 +390,8 @@ margin-top: 50px;
 }
 
 .tamanobtnvolver{width: 100px;}
+
+.tamanobtnvolver2{width: 340px;}
 
 
 .bordesproduct{
@@ -596,3 +606,66 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 }
 
+
+.enlacesfooter{
+
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.enlacesfooter:hover{
+
+color: yellow;
+
+
+
+}
+
+.colorfooter{
+
+color: white;
+
+}
+
+.tamanotitfooter{
+
+font-size: 1.5em;
+
+}
+
+.decoracionabout{
+
+border: 3px solid black;
+border-radius: 14px;
+padding-top: 40px;
+padding-left: 20px;
+padding-right: 20px;
+background-color: bisque;
+
+}
+
+.decoracionaboutdos{
+    border: 3px solid black;
+    border-radius: 14px;
+    padding: 40px;
+
+    background-color: bisque;
+
+
+}
+
+.pabout{
+
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+
+.carritoitem{
+
+margin-top: 20px;
+
+}

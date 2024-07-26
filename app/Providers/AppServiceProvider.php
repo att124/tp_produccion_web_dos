@@ -26,5 +26,10 @@ class AppServiceProvider extends ServiceProvider
             $categorias = Categoria::all();
             $view->with('categorias', $categorias);
         });
+
+        View::composer('componentes.footer', function ($view) {
+            $categorias = Categoria::all();
+            $view->with('categorias', $categorias);
+        });
     }
 }

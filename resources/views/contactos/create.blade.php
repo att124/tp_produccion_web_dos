@@ -45,7 +45,10 @@
                     <label for="consulta" class="form-label">Mensaje</label>
                     <textarea class="form-control" id="consulta" name="consulta" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="centrado espaciobtnvolver">
+                    <button type="submit" class="btn btn-primary mb-3 tamanobtnvolver2">Enviar</button>
+                </div>
+
             </form>
         </div>
     </section>
