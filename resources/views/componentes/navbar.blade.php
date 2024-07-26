@@ -23,10 +23,8 @@
                             @endforelse
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <!-- Laravel verifica si el enlace que se encuentra activo es 'contacto' en caso de ser verdadero devuelve 'activo' y falso '' -->
-                        <a class="nav-link {{ Request::is('contactos/create') ? 'active' : '' }} espaciadoB hovernav" href="{{route ('contactos.create')}}">Contacto</a>
-                    </li>
+
+                      <!-- Laravel verifica si el enlace que se encuentra activo es 'contacto' en caso de ser verdadero devuelve 'activo' y falso '' -->
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('about') ? 'active' : '' }} espaciadoA hovernav" href="{{ route('nosotros') }}">Nosotros</a>
                     </li>
@@ -43,6 +41,11 @@
             <ul class="dropdown-menu bg-pink">
                     <li class="nav-item">
                         <a href="{{ route('users.show', Auth::user()->id) }}" class="dropdown-item hoverdropitems">Perfil </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="dropdown-item {{ Request::is('contactos/create') ? 'active' : '' }}  hoverdropitems hovernav" href="{{route ('contactos.create')}}">Contacto</a>
                     </li>
 
                     <li class="nav-item">

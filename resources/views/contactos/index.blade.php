@@ -31,7 +31,7 @@
 
 
         <tr>
-            <td><a href="#">{{ $contacto->titulo }}</a></td>
+            <td>{{ $contacto->titulo }}</td>
             <td>{{$contacto->user->email}}</td>
             <td>{{$contacto->asunto}}</td>
             <td>
