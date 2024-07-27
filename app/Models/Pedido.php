@@ -10,11 +10,10 @@ class Pedido extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Fecha_pedido',
-        'Precio_Total',
-        'Cantidad_producto',
-        'fk_producto',
-        'fk_usuario',
+        'fecha_pedido',
+        'fk_user',
+        'telefono',
+        'direccion',
     ];
 
     protected $casts = [
@@ -22,15 +21,18 @@ class Pedido extends Model
     ];
 
 
-    public function producto()
+
+    public function user()
     {
-        return $this->belongsTo(Producto::class, 'fk_producto');
+        return $this->belongsTo(User::class, 'fk_users');
     }
 
-
-    public function usuario()
+    public function productos()
     {
-        return $this->belongsTo(Usuario::class, 'fk_usuario');
+        return $this->belongsToMany(Producto::class, 'ventas', 'fk_pedido', 'fk_producto')
+                    ->withPivot('cantidad', 'precio')
+                    ->withTimestamps();
     }
+
 
 }

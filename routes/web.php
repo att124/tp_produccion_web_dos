@@ -10,6 +10,7 @@ use App\Http\Controllers\DatousuarioController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,3 +134,7 @@ Route::put('contactos/{contacto}/update',[ContactoController::class, 'update'])-
 Route::delete('contactos/{contacto}/delete',[ContactoController::class, 'destroy'])->middleware('Isadmin:administrador')->name('contactos.delete');
 
 Route::get('contactos/{contacto}/mostrar', [ContactoController::class, 'show'])->name('contactos.mostrar');
+
+Route::get('/ventas/confirmar-compra', [VentaController::class, 'confirmarCompra'])->middleware('Userlogin')->name('ventas.confirmarCompra');
+
+Route::post('/ventas/finalizar-compra', [VentaController::class, 'finalizarCompra'])->middleware('Userlogin')->name('ventas.finalizarCompra');

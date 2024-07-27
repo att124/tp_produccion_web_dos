@@ -13,17 +13,15 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->date('Fecha_pedido');
-            $table->double('Precio_Total');
-            $table->integer('Cantidad_producto');
+            $table->date('fecha_pedido')->nullable()->default(DB::raw('CURRENT_DATE'));;
+            $table->string('direccion',40);
+            $table->unsignedBigInteger('telefono');
             $table->timestamps();
-
-            $table->unsignedBigInteger('fk_producto');
-            $table->unsignedBigInteger('fk_users');
+            $table->unsignedBigInteger('fk_user');
 
 
-            $table->foreign('fk_producto')->references('id')->on('productos')->onDelete('cascade');
-            $table->foreign('fk_users')->references('id')->on('users')->onDelete('cascade');
+
+            $table->foreign('fk_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

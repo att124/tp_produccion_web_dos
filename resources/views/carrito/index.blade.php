@@ -49,6 +49,12 @@
         <p class="centrado espacioParrafoCarrito">El carrito está vacío.</p>
     @endforelse
 
+    @if($carritoCompras)
+    <form action="{{route('ventas.confirmarCompra')}}" method="get">
+        <button type="submit" class="btn btn-success">Comprar</button>
+    </form>
+    @endif
+
     <p class="espaciado" id="espacioextra">Electra emporium</p>
 
 </div>

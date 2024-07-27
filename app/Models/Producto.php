@@ -28,6 +28,13 @@ class Producto extends Model
         return $this->belongsTo(Categoria::class, 'fk_categoria');
     }
 
+    public function pedidos()
+    {
+        return $this->belongsToMany(Pedido::class, 'ventas', 'fk_producto', 'fk_pedido')
+                    ->withPivot('cantidad', 'precio')
+                    ->withTimestamps();
+    }
+
 
 
 }
