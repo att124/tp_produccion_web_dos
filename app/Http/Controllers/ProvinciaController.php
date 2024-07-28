@@ -13,7 +13,9 @@ class ProvinciaController extends Controller
     public function index()
     {
 
+
         $provincias = Provincia::all();
+
 
        return view('provincias.index',compact('provincias')); // compact devuelve un array asociativo con las provincias.
 
@@ -77,8 +79,20 @@ class ProvinciaController extends Controller
      */
     public function destroy(Provincia $provincia)
     {
-        $provincia->delete();
+        if($provincia->visible == true) {
 
-        return redirect()->route('provincias.index')->with('completado', 'Provincia eliminada exitosamente.');
+            $provincia->update(['visible' => false]);
+
+            return redirect()->route('provincias.index')->with('completado', 'Provincia deshabilitada.');
+        } else {
+
+            $provincia->update(['visible' => true]);
+
+            return redirect()->route('provincias.index')->with('completado', 'Provincia habilitada.');
+        }
+
     }
+
+
+
 }

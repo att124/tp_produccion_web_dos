@@ -11,6 +11,7 @@ class Provincia extends Model
 
     protected $fillable = [
         'NombreProvincia',
+        'visible',
     ];
 
 }

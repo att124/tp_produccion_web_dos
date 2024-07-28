@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $provincias = Provincia::all();
+        $provincias = Provincia::where('visible', 1)->get();
         return view('users.create', compact('provincias'));
     }
 
@@ -97,7 +97,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $provincias = Provincia::all();
+        $provincias = Provincia::where('visible', 1)->get();
         return view('users.edit', compact('provincias', 'user'));
     }
 

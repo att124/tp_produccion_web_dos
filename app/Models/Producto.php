@@ -16,6 +16,7 @@ class Producto extends Model
         'marca',
         'descripcion',
         'especificacion',
+        'visible',
         'imagen1',
         'imagen2',
         'imagen3',

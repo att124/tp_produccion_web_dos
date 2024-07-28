@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('marca', 90);
             $table->text('descripcion');
             $table->text('especificacion');
+            $table->boolean('visible')->default(true);
             $table->binary('imagen1');
             $table->binary('imagen2');
             $table->binary('imagen3')->nullable();
