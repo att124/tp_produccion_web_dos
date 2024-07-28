@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -44,8 +45,9 @@ class CategoriaController extends Controller
     public function show(Categoria $categoria)
     {
 
-        $categoria->load('productos');
-        return view('categorias.mostrar', compact('categoria'));
+        $productos = $categoria->productos()->where('visible', 1)->get();
+
+        return view('categorias.mostrar', compact('categoria','productos'));
     }
 
     /**
@@ -75,8 +77,22 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        $categoria->delete();
+        if ($categoria->visible == 1){
 
-        return redirect()->route('categorias.index')->with('completado', 'Categoría eliminada exitosamente.');
+
+            $categoria->update(['visible' => false]);
+
+            return redirect()->route('categorias.index')->with('completado', 'Categoría deshabilitada.');
+
+        } else {
+
+
+            $categoria->update(['visible' => true]);
+
+            return redirect()->route('categorias.index')->with('completado','Categoría habilitada');
+
+        }
+
+
     }
 }

@@ -18,7 +18,7 @@
 
 <div class="container">
     <div class="row">
-        @foreach ($categoria->productos as $producto)
+        @foreach ($productos as $producto)
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <article class="card cardtamano">
                     <img src="{{ asset('storage/' . $producto->imagen1) }}" alt="{{ $producto->titulo }}" width="300" height="300" class="rounded img-fluid mx-auto">

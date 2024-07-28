@@ -16,6 +16,7 @@
     <thead>
         <tr>
             <th>Nombre</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -23,12 +24,36 @@
         @forelse ($categorias as $categoria)
         <tr>
             <td><a href="{{route('categorias.mostrar',$categoria->id)}}">{{ $categoria->Categoria }}</a></td>
+            @if ($categoria->visible == 1)
+            <td>
+
+                Habilitada.
+
+            </td>
+
+            @else
+
+            <td>
+                 Deshabilitada.
+
+            </td>
+
+            @endif
             <td>
                 <a href="{{route('categorias.edit', $categoria->id) }}" class="btn btn-warning btn-sm">Editar</a>
                 <form method="POST" action="{{route('categorias.delete', $categoria->id)}}" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+
+                    @if ($categoria->visible == 1)
+
+                    <button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
+
+                    @else
+
+                    <button type="submit" class="btn btn-danger btn-sm">Habilitar</button>
+
+                    @endif
                 </form>
             </td>
         </tr>

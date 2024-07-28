@@ -155,9 +155,19 @@ class ProductoController extends Controller
     public function destroy(Request $request, Producto $producto)
     {
 
-        $producto->delete();
+        if ($producto->visible == true){
 
-       return redirect()->route('productos.index')->with('producto eliminado','El producto ha sido eliminado');
+            $producto->update(['visible' => false]);
+
+            return redirect()->route('productos.index')->with('completado','El producto ha sido deshabilitado.');
+
+        } else {
+
+            $producto->update(['visible' => true]);
+
+            return redirect()->route('productos.index')->with('completado','El producto ha sido habilitado.');
+        }
+
 
     }
 

@@ -23,12 +23,12 @@ class AppServiceProvider extends ServiceProvider
     {
         // Cargar categorías en el navbar
         View::composer('componentes.navbar', function ($view) {
-            $categorias = Categoria::all();
+            $categorias = Categoria::where('visible', 1)->get();
             $view->with('categorias', $categorias);
         });
 
         View::composer('componentes.footer', function ($view) {
-            $categorias = Categoria::all();
+            $categorias = Categoria::where('visible', 1)->get();
             $view->with('categorias', $categorias);
         });
     }

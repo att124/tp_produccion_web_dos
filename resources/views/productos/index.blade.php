@@ -7,14 +7,14 @@
 <h1 class="oferta">Lista de productos</h1>
 
 
-@if(session('completado'))
-    <div class="alert alert-success">
-        {{ session('completado') }}
-    </div>
-@endif
-
 
 <div class="container">
+
+    @if(session('completado'))
+        <div class="alert alert-success">
+            {{ session('completado') }}
+        </div>
+    @endif
 
     <a href="{{route('productos.create')}}" class="btn btn-primary mb-3">Crear un nuevo producto</a>
 
@@ -49,6 +49,7 @@
             <th>Marca</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -60,12 +61,27 @@
             <td>{{$producto->marca}}</td>
             <td>${{$producto->precio}}</td>
             <td>{{$producto->stock}}</td>
+            @if ($producto->visible == 1)
+            <td>
+                Habilitado
+            </td>
+            @else
+            <td>
+                Deshabilitado
+            </td>
+
+            @endif
             <td>
                 <a href="{{route('productos.edit', $producto->id)}}" class="btn btn-warning btn-sm">Editar</a>
                 <form method="POST" action="{{route('productos.delete', $producto->id)}}" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                    @if ($producto->visible == 1)
+
+                    <button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
+                    @else
+                    <button type="submit" class="btn btn-danger btn-sm">Habilitar</button>
+                    @endif
                 </form>
             </td>
         </tr>
