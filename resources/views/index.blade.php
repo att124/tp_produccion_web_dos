@@ -21,19 +21,19 @@
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active ">
-                            <img src="{{ asset('imgs/Eslogan_carrousel.png') }}" alt="Imágen" width="1300" height="450" class="img-fluid mx-auto ">
+                            <img src="{{ asset('imgs/Eslogan_carrousel.png') }}" alt="Imágen de productos electra emporium" width="1300" height="450" class="img-fluid mx-auto ">
                      </div>
 
               <div class="carousel-item">
               <a href="#">
-                <img src="https://fakeimg.pl/1300x450/?text=Hello2" alt="Imágen" width="1300" height="450" class="img-fluid mx-auto">
+                <img src="{{ asset('imgs/collage1.jpg') }}" alt="Imágen de productos" width="1300" height="450" class="img-fluid mx-auto">
               </a>
 
             </div>
             <div class="carousel-item">
               <a href="#">
 
-                  <img src="https://fakeimg.pl/1300x450/?text=Hello3" alt="Imágen" width="1300" height="450" class="img-fluid mx-auto">
+                  <img src="{{asset('imgs/collage2.png')}}" alt="Imágen" width="1300" height="450" class="img-fluid mx-auto">
                 </a>
             </div>
         </div>
@@ -162,7 +162,7 @@
 
 <div class="col-12 centrado">
 
-    <img src="https://fakeimg.pl/1000x300/?text=Hello1" alt="Imágen" width="1000" height="300" class="img-fluid espimg2">
+    <img src="{{ asset('imgs/bannerC.jpg') }}" alt="Imágen de contacto" width="1000" height="300" class="img-fluid espimg2">
 
 </div>
 

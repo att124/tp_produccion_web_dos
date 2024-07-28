@@ -22,7 +22,7 @@ class CategoriaSeeder extends Seeder
 
         Categoria::Create([
 
-            'Categoria' => 'Sistemas de sonido',
+            'Categoria' => 'Lavarropas',
 
         ]);
 
@@ -36,14 +36,14 @@ class CategoriaSeeder extends Seeder
 
         Categoria::Create([
 
-            'Categoria' => 'Licuadoras',
+            'Categoria' => 'Celulares',
 
         ]);
 
 
         Categoria::Create([
 
-            'Categoria' => 'Cafeteras',
+            'Categoria' => 'Heladeras',
 
         ]);
 
@@ -51,12 +51,6 @@ class CategoriaSeeder extends Seeder
         Categoria::Create([
 
             'Categoria' => 'Aires acondicionados',
-
-        ]);
-
-        Categoria::Create([
-
-            'Categoria' => 'Hornos',
 
         ]);
 

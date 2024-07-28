@@ -17,7 +17,7 @@ class CarritoController extends Controller
 
     public function store(Request $request)
     {
-        $producto = Producto::findOrFail($request->product_id);
+        $producto = Producto::findOrFail($request->id);
 
         $carritoCompras = session()->get($this->SessionCarrito, []);
 
