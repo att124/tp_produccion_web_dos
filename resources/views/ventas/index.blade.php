@@ -11,7 +11,7 @@
     <div class="container">
 
         <table class="table table-striped table-bordered">
-            <caption>Tabla de roles</caption>
+            <caption>Tabla de ventas</caption>
             <thead>
                 <tr>
                     <th>Número de pedido</th>

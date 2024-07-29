@@ -31,7 +31,7 @@
                 <div class="col-4">
 
                     <div class="col-12 centrado"> <h3 class="espaciado colorfooter tamanotitfooter">Información</h3></div>
-                    <div class="col-12 centrado"><a href="#" class="espBajo enlacesfooter">Información legal</a></div>
+                    <div class="col-12 centrado"><a href="{{route('terminos')}}" class="espBajo enlacesfooter">Información legal</a></div>
 
                 </div>
                 <div class="row">

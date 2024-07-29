@@ -46,7 +46,7 @@
             </tbody>
         </table>
     @empty
-        <p class="centrado espacioParrafoCarrito">El carrito está vacío.</p>
+        <p class="centrado espaciado espacioParrafoCarrito">El carrito está vacío.</p>
     @endforelse
 
     @if($carritoCompras)

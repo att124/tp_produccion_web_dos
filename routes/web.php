@@ -33,6 +33,10 @@ Route::get('/about', function () {
     return view('about');
 })->name('nosotros');
 
+Route::get('/condiciones', function () {
+    return view('condiciones');
+})->name('terminos');
+
 Route::get('/roles', [RolController::class, 'index'])->middleware('Isadmin:administrador')->name('roles.index');
 
 Route::get('/roles/create', [RolController::class, 'create'])->middleware('Isadmin:administrador')->name('roles.create');
