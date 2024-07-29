@@ -41,9 +41,27 @@
                 <input type="number" class="form-control" id="telefono" name="telefono" required>
             </div>
 
+            <div class="centrado">
+                <img src="{{asset('imgs/Visalogo.png')}}" alt="Logo de visa" width="100" class="imgsventa" height="70">
+                <img src="{{asset('imgs/MasterCardLogo.png')}}" alt="Logo de masterCard" class="imgsventa" width="100" height="70">
+            </div>
+
+            <div class="form-group">
+                <label for="titular">Titular de tarjeta</label>
+                <input type="text" class="form-control" id="telefono" name="titular" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nrotarjeta">Número de tarjeta</label>
+                <input type="text" class="form-control" id="telefono" name="nrotarjeta" required>
+            </div>
+
             <div class="centrado espaciobtnvolver">
                 <button type="submit" class="btn btn-success tamanobtnvolver2">Confirmar Compra</button>
             </div>
+
+
+
         </form>
     </div>
 

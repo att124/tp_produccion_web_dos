@@ -15,6 +15,8 @@ class Venta extends Model
         'fk_producto',
         'cantidad',
         'precio',
+        'titular',
+        'nrotarjeta',
     ];
 
 

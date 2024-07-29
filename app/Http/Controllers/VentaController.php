@@ -6,6 +6,7 @@ use App\Models\Venta;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class VentaController extends Controller
 {
@@ -28,8 +29,11 @@ class VentaController extends Controller
             $request->validate([
                 'direccion' => 'required|string|max:40',
                 'telefono' => 'required',
+                 'titular' => 'required|string|max:50',
+                'nrotarjeta' => 'required|string|max:16',
             ]);
 
+            $tarjeta = Crypt::encryptString($request->nrotarjeta);
 
             $pedido = Pedido::create([
                 'fk_user' => Auth::id(),
@@ -45,6 +49,8 @@ class VentaController extends Controller
                     'fk_producto' => $id,
                     'cantidad' => $producto['cantidad'],
                     'precio' => $producto['precio'] * $producto['cantidad'],
+                    'titular' => $request->titular,
+                    'nrotarjeta' => $tarjeta,
                 ]);
 
                 $productoSelec = Producto::findOrFail($id);

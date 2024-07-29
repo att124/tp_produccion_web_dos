@@ -37,10 +37,9 @@ class LoginController extends Controller
 
             return redirect()->route('index');
         }
-
-        throw ValidationException::withMessages([
-            'email' => __('auth.failed'),
-        ]);
+        else {
+            return redirect()->route('login')->with('mensaje','Las credenciales proporcionadas son incorrectas.');
+        }
     }
 
     public function logout(Request $request)

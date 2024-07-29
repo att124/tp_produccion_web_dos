@@ -13,14 +13,13 @@
         <img src="{{asset('imgs/LogoElectra.png')}}" alt="Logo de electra emporiun" width="300" height="70" class="LogoEspacio">
     </div>
 
+    @if (session('mensaje'))
+<div class="alert alert-danger">
+{{ session('mensaje') }}
+</div>
+@endif
     <section class="mt-5">
         <div class="container">
-
-            @if(session('mensaje'))
-            <div class="alert alert-success">
-                {{ session('mensaje') }}
-            </div>
-            @endif
 
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 text-center">
@@ -52,7 +51,7 @@
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
-                    <a href="{{route('contactos.create')}}">Terminos y condiciones</a>
+                    <a href="{{route('terminos')}}">Terminos y condiciones</a>
                 </div>
             </div>
         </div>

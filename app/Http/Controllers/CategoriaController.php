@@ -32,7 +32,6 @@ class CategoriaController extends Controller
     {
         $validated = $request->validate([
             'Categoria' => ['required', 'string', 'max:45' ,'regex:/^[a-zA-Z\s]*$/'],
-            'visible' => ['required', 'boolean']
         ]);
 
         Categoria::create($validated);
