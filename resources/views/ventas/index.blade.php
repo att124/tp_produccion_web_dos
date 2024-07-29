@@ -6,10 +6,9 @@
 
 <main class="ColorPag">
 
-    <h1 class="oferta">Lista de roles: </h1>
+    <h1 class="oferta">Lista de ventas: </h1>
 
     <div class="container">
-        <a href="{{ route('roles.create') }}" class="btn btn-primary mb-3">Crear nuevo rol</a>
 
         <table class="table table-striped table-bordered">
             <caption>Tabla de roles</caption>

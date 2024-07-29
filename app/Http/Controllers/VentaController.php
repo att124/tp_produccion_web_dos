@@ -43,7 +43,7 @@ class VentaController extends Controller
                     'fk_pedido' => $pedido->id,
                     'fk_producto' => $id,
                     'cantidad' => $producto['cantidad'],
-                    'precio' => $producto['precio'],
+                    'precio' => $producto['precio'] * $producto['cantidad'],
                 ]);
             }
 
