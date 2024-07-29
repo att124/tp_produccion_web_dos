@@ -31,7 +31,8 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'Categoria' => ['required', 'string', 'max:45' ,'regex:/^[a-zA-Z\s]*$/']
+            'Categoria' => ['required', 'string', 'max:45' ,'regex:/^[a-zA-Z\s]*$/'],
+            'visible' => ['required', 'boolean']
         ]);
 
         Categoria::create($validated);
@@ -64,7 +65,8 @@ class CategoriaController extends Controller
     public function update(Request $request, Categoria $categoria)
     {
         $validated = $request->validate([
-            'Categoria' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/']
+            'Categoria' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
+            'visible' => ['required', 'boolean']
         ]);
 
         $categoria->update($validated);

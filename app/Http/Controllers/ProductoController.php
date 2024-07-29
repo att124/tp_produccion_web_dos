@@ -50,7 +50,7 @@ class ProductoController extends Controller
         $validacion = $request ->validate([
             'titulo' => ['required', 'string', 'max:45'],
             'precio' => ['required', 'numeric'],
-            'stock' => ['required', 'integer'],
+            'stock' => ['required', 'integer', 'min:1'],
             'marca' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
             'descripcion' => ['required', 'string'],
             'especificacion' => ['required', 'string'],
@@ -111,7 +111,7 @@ class ProductoController extends Controller
         $validacion = $request ->validate([
             'titulo' => ['required', 'string', 'max:45'],
             'precio' => ['required', 'numeric'],
-            'stock' => ['required', 'integer'],
+            'stock' => ['required', 'integer', 'min:1'],
             'marca' => ['required', 'string', 'max:45', 'regex:/^[a-zA-Z\s]*$/'],
             'descripcion' => ['required', 'string'],
             'especificacion' => ['required', 'string'],
@@ -139,7 +139,7 @@ class ProductoController extends Controller
             'stock' => $validacion['stock'],
             'marca' => $validacion['marca'],
             'descripcion' => $validacion['descripcion'],
-            'especificacion' => $validacion['especificaciones'],
+            'especificacion' => $validacion['especificacion'],
             'imagen1' => $imagen1,
             'imagen2' => $imagen2,
             'imagen3' => $imagen3,
@@ -181,7 +181,39 @@ class ProductoController extends Controller
 
     }
 
+    public function incrementarStock(Request $request,Producto $producto){
 
+
+    $validacion = $request->validate([
+        'stock' => ['required', 'integer', 'min:1']
+    ]);
+
+
+    $incremento = $request->input('stock');
+
+
+    $producto->increment('stock', $incremento);
+
+    return redirect()->route('productos.index')->with('completado','Se ha incremetando el stock del producto.');
+
+}
+
+public function editarStock(Request $request, Producto $producto){
+
+return view('productos.editarstock',compact('producto'));
+
+}
+
+public function productosdestacados(){
+
+    $productos = Producto::where('stock', '>', 0)
+    ->where('visible', true)
+    ->orderBy('created_at', 'desc')
+    ->limit(6)
+    ->get();
+
+    return view('index', compact('productos'));
+}
 
 
 }

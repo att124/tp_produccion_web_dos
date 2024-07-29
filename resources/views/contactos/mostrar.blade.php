@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<main>
+<main class="ColorPag">
 
     <div class="container">
 

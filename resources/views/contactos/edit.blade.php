@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<main>
+<main class="ColorPag">
 
     <section id="contacto" class="py-5">
 

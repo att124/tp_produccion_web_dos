@@ -4,7 +4,10 @@
 
 @section('contenido')
 
-<h1 class="oferta">Lista de productos</h1>
+<main class="ColorPag">
+
+
+    <h1 class="oferta">Lista de productos</h1>
 
 
 
@@ -19,16 +22,16 @@
     <a href="{{route('productos.create')}}" class="btn btn-primary mb-3">Crear un nuevo producto</a>
 
 
-      <form action="{{ route('productos.index') }}" method="GET" class="mb-3">
+    <form action="{{ route('productos.index') }}" method="GET" class="mb-3">
         @csrf
         <div class="row">
             <div class="col-md-4">
                 <select name="fk_categoria" class="form-control">
                     <option value="">Todas las Categorías</option>
                     @foreach ($categorias as $categoria)
-                        <option value="{{ $categoria->id }}">
-                            {{ $categoria->Categoria }}
-                        </option>
+                    <option value="{{ $categoria->id }}">
+                        {{ $categoria->Categoria }}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -42,21 +45,22 @@
 
     <table class="table table-striped table-bordered">
         <caption>Tabla de categorias</caption>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Categoria</th>
-            <th>Marca</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($productos as $producto)
-        <tr>
-            <td><a href="{{route('productos.mostrar', $producto->id)}}">{{ $producto->titulo }}</a></td>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($productos as $producto)
+            <tr>
+                <td><a href="{{route('productos.mostrar', $producto->id)}}">{{ $producto->titulo }}</a></td>
             <td><a href="{{route('categorias.mostrar',$producto->categoria->id)}}">{{$producto->categoria->Categoria}}</a></td>
             <td>{{$producto->marca}}</td>
             <td>${{$producto->precio}}</td>
@@ -83,6 +87,7 @@
                     <button type="submit" class="btn btn-danger btn-sm">Habilitar</button>
                     @endif
                 </form>
+                <a href="{{route('producto.editarstock', $producto->id)}}" class="btn btn-warning btn-sm">Modificar stock</a>
             </td>
         </tr>
         @empty
@@ -96,4 +101,5 @@
 
 <p class="espaciado">Electra emporium</p>
 
+</main>
 @endsection

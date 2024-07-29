@@ -7,6 +7,7 @@
 
 @section('contenido')
 
+<main class="ColorPag">
 <div class="container mt-5">
     <h1 class="tituloProducto">Detalles del producto</h1>
 
@@ -24,7 +25,23 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ $producto->id }}">
 
+                    @if ($producto->visible == false)
+
+                    <p class="espaciado">Producto no disponible</p>
+
+                    @else
+
+                    @if ($producto->stock > 0)
+
                     <button type="submit" class="btn btn-primary btn-block btncomprar">Agregar al carrito</button>
+
+                    @else
+                    <p class="espaciado"> Producto sin stock </p>
+                    @endif
+
+                    @endif
+
+
                 </form>
             </div>
         </div>
@@ -73,5 +90,5 @@
 </div>
 
 <p id="margeneselectra">Electra emporium</p>
-
+</main>
     @endsection

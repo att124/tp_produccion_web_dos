@@ -4,9 +4,12 @@
 
 @section('contenido')
 
-<h1 class="oferta">Lista de Usuarios: </h1>
+<main class="ColorPag">
 
-<div class="container">
+
+    <h1 class="oferta">Lista de Usuarios: </h1>
+
+    <div class="container">
 
     @if(session('mensaje'))
     <div class="alert alert-success">
@@ -18,20 +21,20 @@
         <caption>Tabla de usuarios</caption>
         <thead>
             <tr>
-            <th>Email</th>
-            <th>Rol:</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>DNI</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($users as $user)
-        <tr>
-            <td><a href="{{route('users.show', $user->id)}}">{{ $user->email }}</a></td>
-            <td>
+                <th>Email</th>
+                <th>Rol:</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($users as $user)
+            <tr>
+                <td><a href="{{route('users.show', $user->id)}}">{{ $user->email }}</a></td>
+                <td>
                     @if ($user->fk_rol == 1)
 
                     Administrador
@@ -47,27 +50,27 @@
                     @endif
 
 
-            </td>
-            <td>{{ $user->name}}</td>
-            <td>{{$user->datosUsuario->apellido}}</td>
-            <td>{{$user->datosUsuario->dni}}</td>
-            <td>
-            @if ($user->Activo == 1)
+                </td>
+                <td>{{ $user->name}}</td>
+                <td>{{$user->datosUsuario->apellido}}</td>
+                <td>{{$user->datosUsuario->dni}}</td>
+                <td>
+                    @if ($user->Activo == 1)
 
-            Activo
+                    Activo
 
-            @else
+                    @else
 
-            Baneado
+                    Baneado
 
-            @endif</td>
-            <td>
-                <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-        @if ($user->fk_rol != 1)
+                    @endif</td>
+                    <td>
+                        <form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            @if ($user->fk_rol != 1)
 
-                @if ($user->Activo == 1)
+                            @if ($user->Activo == 1)
 
                 <button type="submit" class="btn btn-danger btn-sm">Banear</button>
 
@@ -81,18 +84,19 @@
  El usuario es Administrador
 
  @endif
-                </form>
-            </td>
-        </tr>
-        @empty
-        <tr>
-            <td colspan="7">No hay usuario aún.</td>
-        </tr>
-        @endforelse
-    </tbody>
+</form>
+</td>
+</tr>
+@empty
+<tr>
+    <td colspan="7">No hay usuario aún.</td>
+</tr>
+@endforelse
+</tbody>
 </table>
 </div>
 
 <p class="espaciado">Electra emporium</p>
 
+</main>
 @endsection

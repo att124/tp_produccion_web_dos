@@ -4,30 +4,32 @@
 
 @section('contenido')
 
-<h1 class="oferta">Lista de provincias: </h1>
+<main class="ColorPag">
 
-<div class="container">
-    @if(session('completado'))
-    <div class="alert alert-success">
-        {{ session('completado') }}
-    </div>
-    @endif
+    <h1 class="oferta">Lista de provincias: </h1>
 
-    <a href="{{ route('provincias.create') }}" class="btn btn-primary mb-3">Agregar provincia</a>
+    <div class="container">
+        @if(session('completado'))
+        <div class="alert alert-success">
+            {{ session('completado') }}
+        </div>
+        @endif
 
-    <table class="table table-striped table-bordered">
-        <caption>Tabla de provincias</caption>
-        <thead>
-            <tr>
-            <th>Nombre</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($provincias as $provincia)
-        <tr>
-            <td>{{ $provincia->NombreProvincia }}</td>
+        <a href="{{ route('provincias.create') }}" class="btn btn-primary mb-3">Agregar provincia</a>
+
+        <table class="table table-striped table-bordered">
+            <caption>Tabla de provincias</caption>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @forelse ($provincias as $provincia)
+                <tr>
+                    <td>{{ $provincia->NombreProvincia }}</td>
             <td>@if ($provincia->visible == 1)
 
                 habilitada
@@ -62,4 +64,5 @@
 
 <p class="espaciado">Electra emporium</p>
 
+</main>
 @endsection

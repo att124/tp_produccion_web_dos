@@ -4,42 +4,45 @@
 
 @section('contenido')
 
-<h1 class="oferta">Lista de consultas: </h1>
+<main class="ColorPag">
 
 
-<div class="container">
+    <h1 class="oferta">Lista de consultas: </h1>
+
+
+    <div class="container">
 
     @if(session('mensaje'))
         <div class="alert alert-success">
             {{ session('mensaje') }}
         </div>
-    @endif
+        @endif
 
     <table class="table table-striped table-bordered">
         <caption>Tabla de categorias</caption>
-    <thead>
-        <tr>
-            <th>Titulo</th>
-            <th>Autor</th>
-            <th>Tipo</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($contactos as $contacto)
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($contactos as $contacto)
 
 
-        <tr>
-            <td>{{ $contacto->titulo }}</td>
-            <td>{{$contacto->user->email}}</td>
-            <td>{{$contacto->asunto}}</td>
-            <td>
-                @if ($contacto->estado == 0)
+            <tr>
+                <td>{{ $contacto->titulo }}</td>
+                <td>{{$contacto->user->email}}</td>
+                <td>{{$contacto->asunto}}</td>
+                <td>
+                    @if ($contacto->estado == 0)
 
                     Sin responder
 
-                @else
+                    @else
 
                     Respondido.
 
@@ -74,4 +77,5 @@
 
 <p class="espaciado">Electra emporium</p>
 
+</main>
 @endsection

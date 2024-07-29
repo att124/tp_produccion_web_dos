@@ -81,76 +81,29 @@
 
     <h2 class="oferta"> Entretenimiento </h2>
 
-<div class="row">
 
-  <div class="d-none d-lg-block col-lg-4">
-    <article class="card cardtamano">
-        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2 class="itemtitulo">Nombre</h2>
-        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-        <p class="itemDescripcion">Precio</p>
-        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-    </article>
-</div>
 
-<div class="d-none d-lg-block col-lg-4">
-    <article class="card cardtamano">
-        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2 class="itemtitulo">Nombre</h2>
-        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-        <p class="itemDescripcion">Precio</p>
-        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-    </article>
-</div>
+    @if($productos->isEmpty())
+    <p class="itemDescripcion">No hay productos en esta categoría.</p>
+    @else
 
-<div class="d-none d-lg-block col-lg-4">
-    <article class="card cardtamano">
-        <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-        <h2 class="itemtitulo">Nombre</h2>
-        <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-        <p class="itemDescripcion">Precio</p>
-        <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-    </article>
-</div>
 
-</div>
-
-<h3 class="oferta"> Cuidado Personal </h3>
-
-<div class="row">
-
-    <div class="d-none d-lg-block col-lg-4">
-        <article class="card cardtamano">
-            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2 class="itemtitulo">Nombre</h2>
-            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-            <p class="itemDescripcion">Precio</p>
-            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-        </article>
+    <div class="container">
+        <div class="row">
+            @foreach ($productos as $producto)
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <article class="card cardtamano mrgcard">
+                        <img src="{{ asset('storage/' . $producto->imagen1) }}" alt="{{ $producto->titulo }}" width="300" height="300" class="rounded img-fluid mx-auto">
+                        <h2 class="itemtitulo">{{ $producto->titulo }}</h2>
+                        <p class="itemDescripcion">Marca: {{ $producto->marca }}</p>
+                        <p class="itemDescripcion">Precio: ${{ $producto->precio }}</p>
+                        <a href="{{route('productos.mostrar' , $producto->id)}}" class="btn btn-primary ver-mas-btn">Ver más</a>
+                    </article>
+                </div>
+            @endforeach
+        </div>
     </div>
-
-    <div class="d-none d-lg-block col-lg-4">
-        <article class="card cardtamano">
-            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2 class="itemtitulo">Nombre</h2>
-            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-            <p class="itemDescripcion">Precio</p>
-            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-        </article>
-    </div>
-
-    <div class="d-none d-lg-block col-lg-4">
-        <article class="card cardtamano">
-            <img src="https://fakeimg.pl/300x200/?text=8" alt="foto 8" width="300" height="200" class="rounded img-fluid mx-auto">
-            <h2 class="itemtitulo">Nombre</h2>
-            <p class="itemDescripcion">DESCRIPCIÓN 8</p>
-            <p class="itemDescripcion">Precio</p>
-            <a href="#" class="btn btn-primary ver-mas-btn">Ver más</a>
-        </article>
-    </div>
-
-</div>
-
+    @endif
 
 </section>
 

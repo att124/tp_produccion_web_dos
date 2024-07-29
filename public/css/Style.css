@@ -669,3 +669,40 @@ background-color: bisque;
 margin-top: 20px;
 
 }
+
+.inputdecoracion{
+
+    width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
+
+
+.bordesformulario{
+
+width: 500px;
+border: 2px solid black;
+border-radius: 10px;
+background-color: bisque;
+
+}
+
+.labelstock{
+
+    text-align: center;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.mrgcard{
+
+margin-top: 80px;
+
+}

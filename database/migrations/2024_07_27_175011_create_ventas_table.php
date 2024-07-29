@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_pedido');
             $table->unsignedBigInteger('fk_producto');
             $table->unsignedInteger('cantidad');
-            $table->double('precio', 8, 2);
+            $table->double('precio', 30, 2);
             $table->timestamps();
 
 

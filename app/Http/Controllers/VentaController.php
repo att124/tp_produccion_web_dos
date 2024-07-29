@@ -56,4 +56,15 @@ class VentaController extends Controller
             return redirect()->route('index')->with('mensaje', 'Error al finalizar la compra');
         }
     }
+
+    public function index(){
+
+        $ventas = Venta::all();
+
+
+        return view('ventas.index',compact('ventas'));
+
+    }
+
+
 }

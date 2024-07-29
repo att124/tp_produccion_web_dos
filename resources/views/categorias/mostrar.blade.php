@@ -11,6 +11,12 @@
 <h1 class="oferta">Categoria: {{$categoria->Categoria}} </h1>
 
 <h2 class="oferta">Productos en esta categoría:</h2>
+@if ($categoria->visible == false)
+
+<p class="espaciado"> Categoria no disponible </p>
+
+@else
+
 @if($categoria->productos->isEmpty())
 <p class="itemDescripcion">No hay productos en esta categoría.</p>
 @else
@@ -33,6 +39,9 @@
 </div>
 @endif
 
+
+
+@endif
 
 
 <div class="centrado espaciobtnvolver">

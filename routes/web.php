@@ -22,18 +22,11 @@ use App\Http\Controllers\VentaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [ProductoController::class, 'productosdestacados'])->name('home');
 
-Route::get('/home', function () {
-    return view('index');
-})->name('home');
-
-
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
+// Si necesitas mantener las rutas antiguas por alguna razón, podrías hacerlo así:
+Route::get('/home', [ProductoController::class, 'productosdestacados'])->name('home');
+Route::get('/index', [ProductoController::class, 'productosdestacados'])->name('index');
 
 
 Route::get('/about', function () {
@@ -138,3 +131,9 @@ Route::get('contactos/{contacto}/mostrar', [ContactoController::class, 'show'])-
 Route::get('/ventas/confirmar-compra', [VentaController::class, 'confirmarCompra'])->middleware('Userlogin')->name('ventas.confirmarCompra');
 
 Route::post('/ventas/finalizar-compra', [VentaController::class, 'finalizarCompra'])->middleware('Userlogin')->name('ventas.finalizarCompra');
+
+Route::put('/productos/stock/{producto}',[ProductoController::class, 'incrementarStock'])->middleware('Isadmin:administrador')->name('producto.stock');
+
+Route::get('/productos/editarstock/{producto}',[ProductoController::class, 'editarStock'])->middleware('Isadmin:administrador')->name('producto.editarstock');
+
+Route::get('/ventas/index',[VentaController::class, 'index'])->middleware('Isadmin:administrador')->name('ventas.index');

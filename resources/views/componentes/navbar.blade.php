@@ -86,6 +86,7 @@
                             <li><a class="dropdown-item hoverdropitems" href="{{ route('users.index') }}">Usuarios</a></li>
                             <li><a class="dropdown-item hoverdropitems" href="{{route('productos.index')}}">Lista de productos</a></li>
                             <li><a class="dropdown-item hoverdropitems" href="{{route('provincias.index')}}">  Lista de provincias</a></li>
+                            <li><a class="dropdown-item hoverdropitems" href="{{route('ventas.index')}}">  Lista de ventas</a></li>
                         </ul>
                     </li>
                     @endif

@@ -24,7 +24,7 @@ class Pedido extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'fk_users');
+        return $this->belongsTo(User::class, 'fk_user');
     }
 
     public function productos()
