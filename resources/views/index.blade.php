@@ -79,7 +79,7 @@
 
 <section>
 
-    <h2 class="oferta"> Entretenimiento </h2>
+    <h2 class="oferta" id="margensuperiorindex"> Destacados </h2>
 
 
 

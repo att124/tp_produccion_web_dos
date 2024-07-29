@@ -20,7 +20,7 @@
     <div class="row">
         @foreach ($productos as $producto)
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <article class="card cardtamano">
+                <article class="card cardtamano mrgcard">
                     <img src="{{ asset('storage/' . $producto->imagen1) }}" alt="{{ $producto->titulo }}" width="300" height="300" class="rounded img-fluid mx-auto">
                     <h2 class="itemtitulo">{{ $producto->titulo }}</h2>
                     <p class="itemDescripcion">Marca: {{ $producto->marca }}</p>

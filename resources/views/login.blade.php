@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<main>
+<main class="ColorPag">
 <p>{{Auth::check()}}</p>
 
     <!--<h1 class="oferta text-center mt-5">Login</h1>
@@ -52,17 +52,17 @@
                     </form>
                 </div>
                 <div class="col-12 text-center mt-3">
-                    <a href="{{route('contactos.create')}}">¿Necesitas ayuda?</a>
+                    <a href="{{route('contactos.create')}}">Terminos y condiciones</a>
                 </div>
             </div>
         </div>
     </section>
 
+
+
+
+
+    <p class="espaciado">Electra emporium</p>
 </main>
-
-
-
-
-<p class="espaciado">Electra emporium</p>
 
 @endsection

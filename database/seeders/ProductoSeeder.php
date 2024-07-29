@@ -87,7 +87,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         Producto::create([
-            'titulo' => 'Lavarropas Carga Frontal Longvie 8 Kg 1200 RPM L18012',
+            'titulo' => 'Lavarropas Carga Frontal Longvie 8 Kg',
             'precio' => 800000,
             'stock' => 8,
             'marca' => 'Longvie',
@@ -101,7 +101,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         Producto::create([
-            'titulo' => 'Lavarropas Carga Frontal 9.5Kg 1400 RPM Samsung',
+            'titulo' => 'Lavarropas Carga Frontal 9.5Kg Samsung',
             'precio' => 1250000,
             'stock' => 3,
             'marca' => 'Samsung',
@@ -115,7 +115,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         Producto::create([
-            'titulo' => 'Lavarropas Semiautomático Patrick 5kg LRPK56SB',
+            'titulo' => 'Lavarropas Semiautomático Patrick 5kg',
             'precio' => 205000,
             'stock' => 15,
             'marca' => 'Patrick',
@@ -129,7 +129,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         Producto::create([
-            'titulo' => 'Lavarropas Automático Electrolux 10kg Premium Care',
+            'titulo' => 'Lavarropas Automático Electrolux 10kg',
             'precio' => 875000,
             'stock' => 6,
             'marca' => 'Electrolux',
@@ -143,7 +143,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         Producto::create([
-            'titulo' => 'Lavarropas Carga Frontal Inverter LG WM85WVC5S6P',
+            'titulo' => 'Lavarropas Carga Frontal Inverter LG',
             'precio' => 1450000,
             'stock' => 8,
             'marca' => 'LG',

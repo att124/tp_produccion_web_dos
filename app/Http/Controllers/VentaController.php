@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Pedido;
 use App\Models\Venta;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,7 +46,16 @@ class VentaController extends Controller
                     'cantidad' => $producto['cantidad'],
                     'precio' => $producto['precio'] * $producto['cantidad'],
                 ]);
+
+                $productoSelec = Producto::findOrFail($id);
+
+                $cantidadNueva = $productoSelec->stock - $producto['cantidad'];
+
+                $productoSelec->update(['stock' => $cantidadNueva]);
+
             }
+
+
 
             session()->forget('carrito');
 

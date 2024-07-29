@@ -44,11 +44,28 @@ class CarritoController extends Controller
 
         $carritoCompras = session()->get($this->SessionCarrito, []);
 
+        $producto = Producto::findOrFail($request->id);
+
+        $cantidadDeseada = 1;
+
+        if (isset($carritoCompras[$producto->id])) {
+
+            $carritoCompras[$id]['cantidad'] = $request->input('cantidad');
+
+            $cantidadDeseada = $carritoCompras[$id]['cantidad'];
+
+        }
+
 
         if (isset($carritoCompras[$id])) {
 
             $carritoCompras[$id]['cantidad'] = $request->input('cantidad');
 
+            if ($cantidadDeseada > $producto->stock){
+
+                $carritoCompras[$id]['cantidad'] = 1;
+                return redirect()->route('carrito.index')->with('mensaje', 'No hay suficiente stock para agregar este producto al carrito.');
+            }
 
             if ($carritoCompras[$id]['cantidad'] < 1) {
                 $carritoCompras[$id]['cantidad'] = 1;
