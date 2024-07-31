@@ -28,6 +28,7 @@
                 <th>DNI</th>
                 <th>Estado</th>
                 <th>Acciones</th>
+                <th>Permisos</th>
             </tr>
         </thead>
         <tbody>
@@ -85,6 +86,22 @@
 
  @endif
 </form>
+</td>
+<td>
+    <form method="POST" action="{{ route('users.permisosAdmin', $user->id) }}" style="display:inline;">
+        @csrf
+        @method('Put')
+        @if ($user->fk_rol == 2)
+                @if ($user->Activo == 1)
+        <button type="submit" class="btn ColorBotonVerde btn-sm">Dar permisos</button>
+                @else
+                    El usuario se encuentra baneado.
+                @endif
+        @else
+        <button type="submit" class="btn btn-danger btn-sm">Quitar permisos</button>
+        @endif
+
+    </form>
 </td>
 </tr>
 @empty

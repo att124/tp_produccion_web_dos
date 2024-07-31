@@ -17,7 +17,7 @@
     </div>
 @endif
 
-    <form action="{{ route('productos.update', $producto->id) }}" method="post" class="form-group formulariotamano" enctype="multipart/form-data">
+    <form action="{{ route('productos.update', $producto->id) }}" method="post" class="form-group formulariotamano formucolor" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 
@@ -27,11 +27,11 @@
         </div>
         <div class="mb-3">
             <label for="precio" class="form-label">Precio del producto:</label>
-            <input type="number" name="precio" id="precio" value="{{ old('precio', $producto->precio) }}" class="form-control tamanoinput" required>
+            <input type="number" name="precio" id="precio" min="1"  value="{{ old('precio', $producto->precio) }}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
             <label for="stock" class="form-label">Stock del producto</label>
-            <input type="number" name="stock" id="stock" value="{{ old('stock', $producto->stock) }}" class="form-control tamanoinput" required>
+            <input type="number" name="stock" id="stock" min="1" value="{{ old('stock', $producto->stock) }}" class="form-control tamanoinput" required>
         </div>
         <div class="mb-3">
             <label for="marca" class="form-label">Marca del producto</label>
@@ -39,11 +39,11 @@
         </div>
         <div class="mb-3">
             <label for="descripcion">Descripción: </label>
-            <textarea name="descripcion" id="descripcion" value="{{old('descripcion',$producto->descripcion)}}" class="form-control tamanoinput" required> </textarea>
+            <textarea name="descripcion" id="descripcion" class="form-control tamanoinput" required>{{old('descripcion',$producto->descripcion)}} </textarea>
         </div>
         <div class="mb-3">
             <label for="especificaciones">Especificaciones tecnicas: </label>
-            <textarea name="especificacion" id="especificacion" value="{{old('especificacion',$producto->especificacion)}}" class="form-control tamanoinput" required> </textarea>
+            <textarea name="especificacion" id="especificacion" class="form-control tamanoinput" required>{{old('especificacion',$producto->especificacion)}} </textarea>
         </div>
 
         <div class="mb-3">

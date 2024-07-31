@@ -19,7 +19,7 @@
 @endif
 
 
-    <form action="{{ route('categorias.update', $categoria->id) }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('categorias.update', $categoria->id) }}" method="POST" class="form-group formulariotamano formucolor">
         @method('PUT')
         @csrf
 

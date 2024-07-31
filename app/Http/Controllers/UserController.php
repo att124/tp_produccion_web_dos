@@ -72,7 +72,7 @@ class UserController extends Controller
                 'fk_datos_usuario' => $datosUsuario->id,
             ]);
 
-            return redirect()->route('users.index')->with('mensaje', 'Usuario creado');
+            return redirect()->route('index')->with('mensaje', 'Usuario creado');
         } catch (\Illuminate\Database\QueryException $e) {
             return redirect()->back()->withErrors(['error' => 'error de bdd: ' . $e->getMessage()]);
         } catch (\Exception $e) {
@@ -145,5 +145,30 @@ class UserController extends Controller
 
         }
     }
+
+
+    public function permisosAdmin(User $user){
+
+        if($user->fk_rol == 1) {
+
+            if ($user->id != 1){
+                $user->update(['fk_rol' => 2]);
+                return redirect()->route('users.index',compact('user'))->with('mensaje','Se le ha quitado permisos al usuario');
+            } else {
+
+                return redirect()->route('users.index',compact('user'))->with('mensaje','No puede cambiarle el rol a este usuario');
+
+            }
+
+
+        } else {
+
+            $user->update(['fk_rol' => 1]);
+            return redirect()->route('users.index',compact('user'))->with('mensaje','Se le ha dado permisos al usuario');
+        }
+
+
+    }
+
 }
 

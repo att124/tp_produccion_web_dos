@@ -17,7 +17,7 @@
     </div>
 @endif
 
-    <form action="{{route('productos.store')}}" method="POST" class="form-group formulariotamano" enctype="multipart/form-data">
+    <form action="{{route('productos.store')}}" method="POST" class="form-group formulariotamano formucolor" enctype="multipart/form-data">
 
         @csrf
 

@@ -141,3 +141,5 @@ Route::put('/productos/stock/{producto}',[ProductoController::class, 'incrementa
 Route::get('/productos/editarstock/{producto}',[ProductoController::class, 'editarStock'])->middleware('Isadmin:administrador')->name('producto.editarstock');
 
 Route::get('/ventas/index',[VentaController::class, 'index'])->middleware('Isadmin:administrador')->name('ventas.index');
+
+Route::put('/productos/permisosAdmin/{user}',[UserController::class, 'permisosAdmin'])->middleware('Isadmin:administrador')->name('users.permisosAdmin');

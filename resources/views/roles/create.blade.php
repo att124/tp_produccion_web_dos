@@ -9,7 +9,7 @@
 <div class="centrado">
 
 
-    <form action="{{ route('roles.store') }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('roles.store') }}" method="POST" class="form-group formulariotamano formucolor">
 
         @csrf <!-- Proteccion -->
 

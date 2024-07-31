@@ -7,7 +7,7 @@
 <h1 class="oferta">Edición de roles</h1>
 
 <div class="centrado">
-    <form action="{{ route('roles.update', $rol->id) }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('roles.update', $rol->id) }}" method="POST" class="form-group formulariotamano formucolor">
         @method('PUT') <!-- Modifica el método a PUT -->
         @csrf
 

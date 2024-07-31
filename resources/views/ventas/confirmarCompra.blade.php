@@ -10,9 +10,10 @@
 
     <h2 class="oferta">Resumen de la Compra</h2>
     <div class="container">
-        <table class="table">
+        <table class="table centrarelementostabla">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
@@ -21,6 +22,9 @@
             <tbody>
                 @foreach($carritoCompras as $id => $producto)
                 <tr>
+                    <td> <div class="col-md-6 d-flex justify-content-center mb-4">
+                        <img src="{{ asset('storage/' . $producto['imagen1']) }}" width="100" height="100" class="rounded img-fluid bordesimagenes" alt="{{$producto['titulo']}}">
+                    </div></td>
                     <td>{{ $producto['titulo'] }}</td>
                     <td>${{ $producto['precio'] }}</td>
                     <td>{{ $producto['cantidad'] }}</td>
@@ -30,7 +34,7 @@
             </tbody>
         </table>
 
-        <form action="{{ route('ventas.finalizarCompra') }}" method="post">
+        <form action="{{ route('ventas.finalizarCompra') }}" method="post" class="formucolor">
             @csrf
             <div class="form-group">
                 <label for="direccion">Dirección de Envío</label>

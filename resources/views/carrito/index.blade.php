@@ -15,9 +15,10 @@
     @endif
 
     @forelse($carritoCompras as $id => $producto)
-        <table class="table">
+        <table class="table centrarelementostabla">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Total</th>
@@ -26,6 +27,9 @@
             </thead>
             <tbody>
                 <tr>
+                    <td> <div class="col-md-6 d-flex justify-content-center mb-4">
+                        <img src="{{ asset('storage/' . $producto['imagen1']) }}" width="150" height="100" class="rounded img-fluid bordesimagenes" alt="{{$producto['titulo']}}">
+                    </div></td>
                     <td>{{ $producto['titulo'] }}</td>
                     <td>${{ $producto['precio'] }}</td>
                     <td>${{ $producto['precio'] * $producto['cantidad'] }}</td>
@@ -51,7 +55,7 @@
 
     @if($carritoCompras)
     <form action="{{route('ventas.confirmarCompra')}}" method="get">
-        <button type="submit" class="btn btn-success">Comprar</button>
+        <button type="submit" class="btn btn-success tamanobtnvolver2">Comprar</button>
     </form>
     @endif
 

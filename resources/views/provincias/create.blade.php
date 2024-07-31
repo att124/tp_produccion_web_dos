@@ -7,7 +7,7 @@
 <h1 class="oferta">Agregar provincia</h1>
 
 <div class="centrado">
-    <form action="{{ route('provincias.store') }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('provincias.store') }}" method="POST" class="form-group formulariotamano formucolor">
         @csrf <!-- Protección -->
 
         <div class="mb-3">

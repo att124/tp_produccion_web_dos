@@ -21,7 +21,7 @@
 @endif
 
 
-    <form action="{{ route('provincias.update', $provincia->id) }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('provincias.update', $provincia->id) }}" method="POST" class="form-group formulariotamano formucolor">
         @method('PUT')
         @csrf
 

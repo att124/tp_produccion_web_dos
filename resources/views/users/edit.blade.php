@@ -5,8 +5,8 @@
 
 @section('contenido')
 
-<h1 class="oferta">Edición de  {{$user->name}} </h1>
 
+<h1 class="oferta">Edición de  {{$user->name}} </h1>
 <div class="centrado">
 
 
@@ -21,7 +21,7 @@
 @endif
 
 
-    <form action="{{ route('users.update', $user->id) }}" method="POST" class="form-group formulariotamano">
+    <form action="{{ route('users.update', $user->id) }}" method="POST" class="form-group formulariotamano formucolor">
         @method('PUT')
         @csrf
 

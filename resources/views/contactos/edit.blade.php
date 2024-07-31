@@ -11,7 +11,7 @@
         <div class="container">
 
 
-            <form action="{{ route('contactos.update', $contacto->id) }}" method="POST">
+            <form action="{{ route('contactos.update', $contacto->id) }}" method="POST" class="formucolor">
                 @csrf
                 @method('PUT')
 

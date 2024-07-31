@@ -18,7 +18,7 @@
 
 <div class="centrado">
 
-<form action="{{route('users.store')}}" method="POST" class="form-group formulariotamano">
+<form action="{{route('users.store')}}" method="POST" class="form-group formulariotamano formucolor">
 
 @csrf
 
